@@ -12,6 +12,7 @@
     "loading": "Loading environmental data...",
     "error": "An error occurred",
     "retry": "Try Again",
+    "refresh": "Refresh",
     "simulatedBadge": "SIMULATED",
     "notConnected": "Not Connected",
     "offlineBanner": "Offline mode. Displaying cached data from {time}.",
