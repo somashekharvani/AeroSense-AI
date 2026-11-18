@@ -4,6 +4,32 @@ All notable changes to the AeroSense AI platform will be documented in this file
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Phase 3: Live Data Services, Fusion & Caching] - 2026-11-18
+
+### Added
+- **Third-Party API Clients**:
+  - `services/open-meteo.ts`: Fetches weather, atmospheric profile (boundary layer height, geopotential heights, pressure levels 925 & 850 hPa), and European CAMS 6-pollutant air quality model with unit conversion (CO $\mu\text{g/m}^3 \to \text{mg/m}^3$) and exponential backoff retry.
+  - `services/waqi.ts`: Fetches CPCB real-time ground station telemetry from WAQI feed with Haversine distance ranking and source attributions.
+  - `services/nasa-firms.ts`: Fetches and parses active thermal anomaly detections from NASA FIRMS VIIRS NRT satellites over a 110km bounding box with safe CSV parsing and confidence categorization (`low`, `nominal`, `high`).
+  - `services/geocoding.ts`: Forward and reverse geocoding via Open-Meteo Geocoding API with 1-month memory caching.
+- **Sensor Fusion Engine**: `lib/fusion.ts` combining station observations and model reanalysis via Inverse-Distance Weighting (IDW), observation quality scoring (distance, age, completeness), divergence detection ($>35\%$), and confidence scoring (`high`, `medium`, `low`).
+- **Incident View & Downwind Sector Engine**: `engines/incident.ts` analyzing NASA FIRMS fire detections, wind transport direction ($\theta + 180^\circ$), horizontal Gaussian plume dispersion cone ($\pm 35^\circ$), and flagging downwind ground stations with explicit `isEstimate: true`.
+- **In-Memory Cache & Resilient Fallback**: `lib/caching/cache.ts` providing TTL-based storage with stale-while-revalidate fallback so the application stays functional when upstream APIs experience downtime.
+- **Security & Rate Limiting**: `lib/security/rate-limit.ts` providing in-memory sliding token bucket limiting clients to 60 requests per minute with `Retry-After` headers.
+- **API Routes**:
+  - `GET /api/snapshot`: Orchestrates concurrent upstream fetches, runs data fusion, Indian AQI, Inversion Risk, and Incident View engines, and returns unified telemetry with cache control headers (`X-Cache: HIT | MISS | STALE`).
+  - `GET /api/forecast`: Provides 48-hour outlook and backtest metric evaluation (forecast vs. station observation pairs).
+  - `GET /api/stations`: Returns nearby ground stations with distance and pollutants.
+  - `GET /api/fires`: Returns active satellite thermal points within the target radius.
+- **Client Hooks & UI Components**:
+  - `hooks/use-snapshot.ts`: React hook for telemetry with SWR caching, error states, and stale fallback flags.
+  - `components/dashboard/source-status-strip.tsx`: Live telemetry status badges showing Open-Meteo, WAQI, NASA FIRMS, and Drone ("Not Connected").
+  - `components/dashboard/backtest-panel.tsx`: Backtest validation card showing MAE, RMSE, and bias against station ground truth.
+  - Updated home dashboard (`app/page.tsx`) with live sensor fusion data.
+- **Testing**: 15 test suites and 96 passing unit and integration tests with zero TypeScript errors.
+
+---
+
 ## [Phase 2: Schemas & Scientific Deterministic Engines] - 2026-11-18
 
 ### Added

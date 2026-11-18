@@ -10,6 +10,7 @@ export default getRequestConfig(async () => {
 
   return {
     locale,
+    timeZone: 'Asia/Kolkata',
     messages: (await import(`../../messages/${locale}.json`)).default,
   };
 });

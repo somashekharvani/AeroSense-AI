@@ -97,7 +97,7 @@ export function LanguageProvider({
         isRtl: direction === 'rtl',
       }}
     >
-      <NextIntlClientProvider locale={locale} messages={messages}>
+      <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Kolkata">
         {children}
       </NextIntlClientProvider>
     </LanguageContext.Provider>
