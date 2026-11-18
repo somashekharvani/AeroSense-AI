@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "language": "Punjabi",
+    "locale": "pa",
+    "script": "Gurmukhi",
+    "direction": "ltr",
+    "needsNativeReview": true
+  },
+  "common": {
+    "appName": "ਐਰੋਸੈਂਸ ਏਆਈ",
+    "tagline": "ਹਵਾ ਨੂੰ ਜਾਣੋ। ਖ਼ਤਰੇ ਦਾ ਅੰਦਾਜ਼ਾ ਲਗਾਓ। ਪਰਿਵਾਰ ਦੀ ਰੱਖਿਆ ਕਰੋ। ਪ੍ਰਭਾਵ ਸਾਬਤ ਕਰੋ।",
+    "loading": "ਵਾਤਾਵਰਣ ਡੇਟਾ ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+    "error": "ਇੱਕ ਗਲਤੀ ਹੋਈ",
+    "retry": "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "simulatedBadge": "ਸਿਮੂਲੇਟਿਡ (ਨਮੂਨਾ)",
+    "notConnected": "ਕਨੈਕਟ ਨਹੀਂ ਹੈ",
+    "offlineBanner": "ਔਫਲਾਈਨ ਮੋਡ। {time} ਦਾ ਸੰਭਾਲਿਆ ਡੇਟਾ ਦਿਖਾਇਆ ਜਾ ਰਿਹਾ ਹੈ।",
+    "disclaimer": "ਸਿਹਤ ਜਾਣਕਾਰੀ ਕੇਵਲ ਜਾਗਰੂਕਤਾ ਲਈ ਹੈ, ਕੋਈ ਡਾਕਟਰੀ ਸਲਾਹ ਨਹੀਂ।",
+    "units": {
+      "ugm3": "µg/m³",
+      "mgm3": "mg/m³",
+      "cadr": "m³/h",
+      "kmh": "ਕਿਮੀ/ਘੰਟਾ",
+      "celsius": "°C",
+      "percent": "%",
+      "meters": "ਮੀਟਰ",
+      "hpa": "hPa"
+    },
+    "confidence": {
+      "high": "ਉੱਚ ਭਰੋਸੇਯੋਗਤਾ",
+      "medium": "ਦਰਮਿਆਨੀ ਭਰੋਸੇਯੋਗਤਾ",
+      "low": "ਘੱਟ ਭਰੋਸੇਯੋਗਤਾ",
+      "reasons": "ਭਰੋਸੇਯੋਗਤਾ ਕਾਰਕ"
+    },
+    "sources": {
+      "model": "ਵਾਯੂਮੰਡਲੀ ਮਾਡਲ",
+      "station": "ਜ਼ਮੀਨੀ ਸਟੇਸ਼ਨ",
+      "satellite": "ਨਾਸਾ VIIRS ਸੈਟੇਲਾਈਟ",
+      "drone": "ਐਰੋਸੈਂਸ ਡਰੋਨ",
+      "simulated": "ਸਿਮੂਲੇਟਿਡ ਡੇਟਾ"
+    }
+  },
+  "nav": {
+    "overview": "ਸੰਖੇਪ",
+    "live": "ਲਾਈਵ ਹਵਾ ਵਿਸ਼ਲੇਸ਼ਣ",
+    "map": "ਪ੍ਰਦੂਸ਼ਣ ਨਕਸ਼ਾ",
+    "family": "ਪਰਿਵਾਰਕ ਸੁਰੱਖਿਆ",
+    "planner": "ਏਆਈ ਰੋਜ਼ਾਨਾ ਯੋਜਨਾਕਾਰ",
+    "indoor": "ਘਰੇਲੂ ਹਵਾ ਸਲਾਹਕਾਰ",
+    "whatIf": "ਵ੍ਹੱਟ-ਇਫ ਸਿਮੂਲੇਟਰ",
+    "forecast": "ਪ੍ਰਦੂਸ਼ਣ ਪੂਰਵ ਅਨੁਮਾਨ",
+    "community": "ਕਮਿਊਨਿਟੀ ਹੱਬ",
+    "copilot": "ਏਆਈ ਕੋ-ਪਾਇਲਟ",
+    "settings": "ਸੈਟਿੰਗਾਂ ਅਤੇ ਗੋਪਨੀਯਤਾ"
+  },
+  "aqi": {
+    "categoryGood": "ਚੰਗਾ",
+    "categorySatisfactory": "ਸੰਤੋਖਜਨਕ",
+    "categoryModerate": "ਦਰਮਿਆਨਾ",
+    "categoryPoor": "ਮਾੜਾ",
+    "categoryVeryPoor": "ਬਹੁਤ ਮਾੜਾ",
+    "categorySevere": "ਗੰਭੀਰ",
+    "subIndex": "ਉਪ-ਸੂਚਕਾਂਕ",
+    "dominantPollutant": "ਮੁੱਖ ਪ੍ਰਦੂਸ਼ਕ",
+    "inversionRisk": "ਉਲਟਾਵ ਦਾ ਖ਼ਤਰਾ",
+    "low": "ਘੱਟ",
+    "moderate": "ਦਰਮਿਆਨਾ",
+    "high": "ਵੱਧ"
+  },
+  "location": {
+    "title": "ਸਥਾਨ ਚੁਣੋ",
+    "changeLocation": "ਸਥਾਨ ਬਦਲੋ",
+    "searchTab": "ਸ਼ਹਿਰ / ਖੇਤਰ ਖੋਜੋ",
+    "searchPlaceholder": "ਭਾਰਤੀ ਸ਼ਹਿਰ ਜਾਂ ਖੇਤਰ ਖੋਜੋ...",
+    "useGps": "ਮੌਜੂਦਾ ਸਥਾਨ ਵਰਤੋਂ",
+    "gpsPrompt": "ਜੀਪੀਐਸ ਸਥਾਨ ਲਿਆ ਜਾ ਰਿਹਾ ਹੈ...",
+    "gpsPermissionDenied": "ਸਥਾਨ ਦੀ ਇਜਾਜ਼ਤ ਰੱਦ ਕੀਤੀ ਗਈ। ਕਿਰਪਾ ਕਰਕੇ ਸ਼ਹਿਰ ਖੋਜੋ ਜਾਂ ਚੁਣੋ।",
+    "mapTab": "ਨਕਸ਼ਾ ਚੋਣ",
+    "mapInstructions": "ਸਥਾਨ ਨਿਰਧਾਰਤ ਕਰਨ ਲਈ ਨਕਸ਼ੇ 'ਤੇ ਕਿਤੇ ਵੀ ਕਲਿੱਕ ਕਰੋ।",
+    "presetsTab": "ਮੁੱਖ ਸ਼ਹਿਰ",
+    "savedPlaces": "ਸੰਭਾਲੇ ਗਏ ਸਥਾਨ",
+    "saveThisPlace": "ਇਹ ਸਥਾਨ ਸੰਭਾਲੋ",
+    "maxPlacesReached": "ਵੱਧ ਤੋਂ ਵੱਧ 5 ਸਥਾਨ ਸੰਭਾਲੇ ਜਾ ਸਕਦੇ ਹਨ।",
+    "noResults": "ਕੋਈ ਸਥਾਨ ਨਹੀਂ ਮਿਲਿਆ।",
+    "coordinatesRoundedNotice": "ਤੁਹਾਡੀ ਗੋਪਨੀਯਤਾ ਲਈ ਕੋਆਰਡੀਨੇਟਸ 2 ਦਸ਼ਮਲਵ ਸਥਾਨਾਂ ਤੱਕ ਸੀਮਤ ਹਨ।"
+  },
+  "receipt": {
+    "title": "ਪ੍ਰਭਾਵ ਰਸੀਦ",
+    "verifiedBy": "ਇੰਜਣ ਦੁਆਰਾ ਤਸਦੀਕ ਕੀਤਾ ਗਿਆ",
+    "action": "ਸਿਫਾਰਸ਼ ਕੀਤੀ ਕਾਰਵਾਈ",
+    "baseline": "ਮੌਜੂਦਾ ਸਥਿਤੀ",
+    "alternative": "ਸਾਫ਼ ਬਦਲ",
+    "estimatedChange": "ਅਨੁਮਾਨਿਤ ਤਬਦੀਲੀ",
+    "method": "ਵਿਗਿਆਨਕ ਤਰੀਕਾ",
+    "assumptions": "ਧਾਰਨਾਵਾਂ ਅਤੇ ਕਾਰਕ",
+    "dataUsed": "ਵਰਤਿਆ ਗਿਆ ਡੇਟਾ",
+    "engineVersion": "ਇੰਜਣ ਸੰਸਕਰਣ",
+    "aiExplanation": "ਏਆਈ ਵਿਆਖਿਆ"
+  },
+  "settings": {
+    "title": "ਸੈਟਿੰਗਾਂ ਅਤੇ ਗੋਪਨੀਯਤਾ",
+    "language": "ਭਾਸ਼ਾ",
+    "graphicsQuality": "3D ਗ੍ਰਾਫਿਕਸ ਗੁਣਵੱਤਾ",
+    "qualityHigh": "ਉੱਚ (ਪੂਰੇ 3D ਪ੍ਰਭਾਵ)",
+    "qualityMedium": "ਦਰਮਿਆਨਾ (ਸੰਤੁਲਿਤ)",
+    "qualityLow": "ਘੱਟ (ਬੈਟਰੀ ਬੱਚਤ)",
+    "qualityOff": "2D ਸਧਾਰਨ ਮੋਡ",
+    "privacy": "ਸਥਾਨਕ ਡਿਵਾਈਸ ਸਟੋਰੇਜ",
+    "privacyDesc": "ਜਾਣਕਾਰੀ ਕੇਵਲ ਤੁਹਾਡੇ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਰਹਿੰਦੀ ਹੈ, ਸਰਵਰਾਂ 'ਤੇ ਨਹੀਂ ਭੇਜੀ ਜਾਂਦੀ।",
+    "clearData": "ਸਾਰਾ ਡੇਟਾ ਮਿਟਾਓ",
+    "dataCleared": "ਸਥਾਨਕ ਡੇਟਾ ਸਫਲਤਾਪੂਰਵਕ ਮਿਟਾਇਆ ਗਿਆ।"
+  },
+  "welcome": {
+    "welcomeTitle": "ਐਰੋਸੈਂਸ ਏਆਈ ਵਿੱਚ ਜੀ ਆਇਆਂ ਨੂੰ",
+    "welcomeSubtitle": "ਤੁਹਾਡਾ ਬੁੱਧੀਮਾਨ ਸਾਫ਼ ਹਵਾ ਸਾਥੀ। ਹਵਾ ਜਾਣੋ, ਪਰਿਵਾਰ ਬਚਾਓ, ਪ੍ਰਭਾਵ ਸਾਬਤ ਕਰੋ।",
+    "step1": "ਕਦਮ 1: ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ",
+    "step2": "ਕਦਮ 2: ਆਪਣਾ ਸਥਾਨ ਨਿਰਧਾਰਤ ਕਰੋ",
+    "getStarted": "ਐਰੋਸੈਂਸ ਏਆਈ ਸ਼ੁਰੂ ਕਰੋ"
+  }
+}

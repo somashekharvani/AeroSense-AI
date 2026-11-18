@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "language": "English",
+    "locale": "en",
+    "script": "Latin",
+    "direction": "ltr",
+    "needsNativeReview": false
+  },
+  "common": {
+    "appName": "AeroSense AI",
+    "tagline": "Know the air. Predict the risk. Protect your family. Prove the impact.",
+    "loading": "Loading environmental data...",
+    "error": "An error occurred",
+    "retry": "Try Again",
+    "simulatedBadge": "SIMULATED",
+    "notConnected": "Not Connected",
+    "offlineBanner": "Offline mode. Displaying cached data from {time}.",
+    "disclaimer": "Health information is for environmental guidance and awareness only, never clinical diagnosis or medical advice.",
+    "units": {
+      "ugm3": "µg/m³",
+      "mgm3": "mg/m³",
+      "cadr": "m³/h",
+      "kmh": "km/h",
+      "celsius": "°C",
+      "percent": "%",
+      "meters": "m",
+      "hpa": "hPa"
+    },
+    "confidence": {
+      "high": "High Confidence",
+      "medium": "Medium Confidence",
+      "low": "Low Confidence",
+      "reasons": "Confidence factors"
+    },
+    "sources": {
+      "model": "Atmospheric Model",
+      "station": "Ground Station",
+      "satellite": "NASA VIIRS Satellite",
+      "drone": "AeroSense Drone",
+      "simulated": "Simulated Data"
+    }
+  },
+  "nav": {
+    "overview": "Overview",
+    "live": "Live Air Intelligence",
+    "map": "Pollution Map",
+    "family": "Family Protection",
+    "planner": "AI Daily Planner",
+    "indoor": "Indoor Air Advisor",
+    "whatIf": "What-If Simulator",
+    "forecast": "Pollution Forecast",
+    "community": "Community Hub",
+    "copilot": "AI Copilot",
+    "settings": "Settings & Privacy"
+  },
+  "aqi": {
+    "categoryGood": "Good",
+    "categorySatisfactory": "Satisfactory",
+    "categoryModerate": "Moderate",
+    "categoryPoor": "Poor",
+    "categoryVeryPoor": "Very Poor",
+    "categorySevere": "Severe",
+    "subIndex": "Sub-Index",
+    "dominantPollutant": "Dominant Pollutant",
+    "inversionRisk": "Inversion Risk",
+    "low": "Low",
+    "moderate": "Moderate",
+    "high": "High"
+  },
+  "location": {
+    "title": "Select Location",
+    "changeLocation": "Change Location",
+    "searchTab": "Search City / Area",
+    "searchPlaceholder": "Search Indian city or neighborhood...",
+    "useGps": "Use Current Location",
+    "gpsPrompt": "Requesting GPS coordinate...",
+    "gpsPermissionDenied": "Location permission denied. Please search or pick a preset city.",
+    "mapTab": "Map Selection",
+    "mapInstructions": "Click anywhere on the map to set your location coordinates.",
+    "presetsTab": "Popular Cities",
+    "savedPlaces": "Saved Places",
+    "saveThisPlace": "Save Place",
+    "maxPlacesReached": "Maximum 5 saved locations reached.",
+    "noResults": "No locations found matching your search.",
+    "coordinatesRoundedNotice": "Coordinates are rounded to 2 decimal places to protect your personal privacy."
+  },
+  "receipt": {
+    "title": "Impact Receipt",
+    "verifiedBy": "Verified by Engine",
+    "action": "Recommended Action",
+    "baseline": "Baseline Scenario",
+    "alternative": "Clean Alternative",
+    "estimatedChange": "Estimated Change",
+    "method": "Scientific Method",
+    "assumptions": "Assumptions & Factors",
+    "dataUsed": "Data & Readings Used",
+    "engineVersion": "Engine Version",
+    "aiExplanation": "AI Explanation"
+  },
+  "settings": {
+    "title": "Settings & Privacy",
+    "language": "Language",
+    "graphicsQuality": "3D Graphics Quality",
+    "qualityHigh": "High (Full 3D Effects)",
+    "qualityMedium": "Medium (Balanced)",
+    "qualityLow": "Low (Battery Saver)",
+    "qualityOff": "2D Accessible Mode",
+    "privacy": "Local Device Storage",
+    "privacyDesc": "Family profiles and location bookmarks are stored strictly in your browser IndexedDB and never uploaded to remote servers.",
+    "clearData": "Clear All Local Data",
+    "dataCleared": "Local storage cleared successfully."
+  },
+  "welcome": {
+    "welcomeTitle": "Welcome to AeroSense AI",
+    "welcomeSubtitle": "Your intelligent clean-air copilot. Know the air, predict the risk, protect your family, and prove the impact.",
+    "step1": "Step 1: Choose Your Language",
+    "step2": "Step 2: Set Your Location",
+    "getStarted": "Enter AeroSense AI"
+  }
+}

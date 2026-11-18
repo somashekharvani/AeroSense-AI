@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "language": "Urdu",
+    "locale": "ur",
+    "script": "Arabic",
+    "direction": "rtl",
+    "needsNativeReview": true
+  },
+  "common": {
+    "appName": "ایرو سینس اے آئی",
+    "tagline": "ہوا کو جانیں۔ خطرے کی پیش گوئی کریں۔ اپنے خاندان کی حفاظت کریں۔ اثر ثابت کریں۔",
+    "loading": "ماحولیاتی ڈیٹا لوڈ ہو رہا ہے...",
+    "error": "ایک خرابی پیش آ گئی",
+    "retry": "دوبارہ کوشش کریں",
+    "simulatedBadge": "نقلی (سیمولیٹڈ)",
+    "notConnected": "منسلک نہیں ہے",
+    "offlineBanner": "آف لائن وضع۔ {time} کا محفوظ شدہ ڈیٹا دکھایا جا رہا ہے۔",
+    "disclaimer": "صحت سے متعلق معلومات صرف ماحولیاتی رہنمائی کے لیے ہیں، طبی مشورہ نہیں ہے۔",
+    "units": {
+      "ugm3": "µg/m³",
+      "mgm3": "mg/m³",
+      "cadr": "m³/h",
+      "kmh": "کلومیٹر/گھنٹہ",
+      "celsius": "°C",
+      "percent": "%",
+      "meters": "میٹر",
+      "hpa": "hPa"
+    },
+    "confidence": {
+      "high": "اعلیٰ اعتماد",
+      "medium": "درمیانہ اعتماد",
+      "low": "کم اعتماد",
+      "reasons": "اعتماد کے عوامل"
+    },
+    "sources": {
+      "model": "ماحولیاتی ماڈل",
+      "station": "زمینی اسٹیشن",
+      "satellite": "ناسا VIIRS سیٹلائٹ",
+      "drone": "ایرو سینس ڈرون",
+      "simulated": "سیمولیٹڈ ڈیٹا"
+    }
+  },
+  "nav": {
+    "overview": "جائزہ",
+    "live": "براہ راست ہوا کی معلومات",
+    "map": "آلودگی کا نقشہ",
+    "family": "خاندان کا تحفظ",
+    "planner": "اے آئی روزانہ کا منصوبہ ساز",
+    "indoor": "انڈور ہوا کا مشیر",
+    "whatIf": "کیا اگر سمیلیٹر",
+    "forecast": "آلودگی کی پیش گوئی",
+    "community": "کمیونٹی مرکز",
+    "copilot": "اے آئی معاون",
+    "settings": "ترتیبات اور رازداری"
+  },
+  "aqi": {
+    "categoryGood": "اچھی",
+    "categorySatisfactory": "تسلی بخش",
+    "categoryModerate": "معتدل",
+    "categoryPoor": "خراب",
+    "categoryVeryPoor": "بہت خراب",
+    "categorySevere": "شدید",
+    "subIndex": "ذیلی انڈیکس",
+    "dominantPollutant": "نمایاں آلودگی",
+    "inversionRisk": "حرارتی الٹاؤ کا خطرہ",
+    "low": "کم",
+    "moderate": "درمیانہ",
+    "high": "زیادہ"
+  },
+  "location": {
+    "title": "مقام منتخب کریں",
+    "changeLocation": "مقام تبدیل کریں",
+    "searchTab": "شہر / علاقہ تلاش کریں",
+    "searchPlaceholder": "ہندوستانی شہر یا علاقہ تلاش کریں...",
+    "useGps": "موجودہ مقام استعمال کریں",
+    "gpsPrompt": "جی پی ایس کوآرڈینیٹس حاصل کیے جا رہے ہیں...",
+    "gpsPermissionDenied": "مقام کی اجازت مسترد کر دی گئی۔ براہ کرم تلاش کریں یا شہر منتخب کریں۔",
+    "mapTab": "نقشے کا انتخاب",
+    "mapInstructions": "مقام سیٹ کرنے کے لیے نقشے پر کہیں بھی کلک کریں۔",
+    "presetsTab": "مشہور شہر",
+    "savedPlaces": "محفوظ کردہ مقامات",
+    "saveThisPlace": "اس مقام کو محفوظ کریں",
+    "maxPlacesReached": "زیادہ سے زیادہ 5 مقامات محفوظ کیے جا سکتے ہیں۔",
+    "noResults": "تلاش سے مماثل کوئی مقام نہیں ملا۔",
+    "coordinatesRoundedNotice": "آپ کی رازداری کے تحفظ کے لیے کوآرڈینیٹس کو 2 اعشاریہ جگہوں تک محدود کیا گیا ہے۔"
+  },
+  "receipt": {
+    "title": "اثر کی رسید",
+    "verifiedBy": "انجن سے تصدیق شدہ",
+    "action": "تجویز کردہ اقدام",
+    "baseline": "موجودہ صورتحال",
+    "alternative": "صاف متبادل",
+    "estimatedChange": "تخمینہ شدہ تبدیلی",
+    "method": "سائنسی طریقہ",
+    "assumptions": "مفروضات اور عوامل",
+    "dataUsed": "استعمال شدہ ڈیٹا",
+    "engineVersion": "انجن کا ورژن",
+    "aiExplanation": "اے آئی وضاحت"
+  },
+  "settings": {
+    "title": "ترتیبات اور رازداری",
+    "language": "زبان",
+    "graphicsQuality": "3D گرافکس کوالٹی",
+    "qualityHigh": "اعلیٰ (مکمل 3D اثرات)",
+    "qualityMedium": "درمیانہ (متوازن)",
+    "qualityLow": "کم (بیٹری کی بچت)",
+    "qualityOff": "2D آسان وضع",
+    "privacy": "مقامی ڈیوائس اسٹوریج",
+    "privacyDesc": "خاندانی معلومات صرف آپ کے براؤزر میں محفوظ ہوتی ہیں، سرور پر نہیں بھیجی جاتیں۔",
+    "clearData": "تمام مقامی ڈیٹا صاف کریں",
+    "dataCleared": "مقامی ڈیٹا کامیابی کے ساتھ صاف کر دیا گیا۔"
+  },
+  "welcome": {
+    "welcomeTitle": "ایرو سینس اے آئی میں خوش آمدید",
+    "welcomeSubtitle": "آپ کا ہوشیار صاف ہوا کا رہنما۔ ہوا کو جانیں، حفاظت کریں، اثر ثابت کریں۔",
+    "step1": "مرحلہ 1: اپنی زبان منتخب کریں",
+    "step2": "مرحلہ 2: اپنا مقام طے کریں",
+    "getStarted": "ایرو سینس اے آئی میں داخل ہوں"
+  }
+}

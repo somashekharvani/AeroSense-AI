@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "language": "Marathi",
+    "locale": "mr",
+    "script": "Devanagari",
+    "direction": "ltr",
+    "needsNativeReview": true
+  },
+  "common": {
+    "appName": "एरोसेन्स एआय",
+    "tagline": "हवा समजून घ्या. जोखमीचा अंदाज घ्या. कुटुंबाचे रक्षण करा. प्रभाव सिद्ध करा.",
+    "loading": "पर्यावरणीय माहिती लोड होत आहे...",
+    "error": "त्रुटी आढळली",
+    "retry": "पुन्हा प्रयत्न करा",
+    "simulatedBadge": "सिम्युलेटेड",
+    "notConnected": "कनेक्ट केलेले नाही",
+    "offlineBanner": "ऑफलाइन मोड. {time} ची कॅश केलेली माहिती दाखवत आहे.",
+    "disclaimer": "आरोग्य माहिती केवळ जनजागृतीसाठी आहे, कोणताही वैद्यकीय सल्ला नाही.",
+    "units": {
+      "ugm3": "µg/m³",
+      "mgm3": "mg/m³",
+      "cadr": "m³/h",
+      "kmh": "किमी/तास",
+      "celsius": "°C",
+      "percent": "%",
+      "meters": "मी",
+      "hpa": "hPa"
+    },
+    "confidence": {
+      "high": "उच्च विश्वासार्हता",
+      "medium": "मध्यम विश्वासार्हता",
+      "low": "कमी विश्वासार्हता",
+      "reasons": "विश्वासार्हता घटक"
+    },
+    "sources": {
+      "model": "वातावरणीय मॉडेल",
+      "station": "जमिनीवरील केंद्र",
+      "satellite": "नासा VIIRS उपग्रह",
+      "drone": "एरोसेन्स ड्रोन",
+      "simulated": "सिम्युलेटेड डेटा"
+    }
+  },
+  "nav": {
+    "overview": "आढावा",
+    "live": "थेट हवा गुणवत्ता",
+    "map": "प्रदूषण नकाशा",
+    "family": "कुटुंब संरक्षण",
+    "planner": "एआय दैनिक नियोजक",
+    "indoor": "घरातील हवा सल्लागार",
+    "whatIf": "व्हॉट-इफ सिम्युलेटर",
+    "forecast": "प्रदूषण अंदाज",
+    "community": "समुदाय केंद्र",
+    "copilot": "एआय कोपायलट",
+    "settings": "सेटिंग्ज आणि गोपनीयता"
+  },
+  "aqi": {
+    "categoryGood": "चांगली",
+    "categorySatisfactory": "समाधानकारक",
+    "categoryModerate": "मध्यम",
+    "categoryPoor": "खराब",
+    "categoryVeryPoor": "अतिशय खराब",
+    "categorySevere": "गंभीर",
+    "subIndex": "उप-निर्देशांक",
+    "dominantPollutant": "प्रमुख प्रदूषक",
+    "inversionRisk": "व्युत्क्रमण जोखीम",
+    "low": "कमी",
+    "moderate": "मध्यम",
+    "high": "जास्त"
+  },
+  "location": {
+    "title": "स्थान निवडा",
+    "changeLocation": "स्थान बदला",
+    "searchTab": "शहर / परिसर शोधा",
+    "searchPlaceholder": "भारतीय शहर किंवा परिसर शोधा...",
+    "useGps": "सध्याचे स्थान वापरा",
+    "gpsPrompt": "जीपीएस स्थान मिळवत आहे...",
+    "gpsPermissionDenied": "स्थान परवानगी नाकारली. कृपया शोध वापरा किंवा शहर निवडा.",
+    "mapTab": "नकाशा निवड",
+    "mapInstructions": "स्थान निश्चित करण्यासाठी नकाशावर कुठेही क्लिक करा.",
+    "presetsTab": "प्रमुख शहरे",
+    "savedPlaces": "जतन केलेली स्थाने",
+    "saveThisPlace": "हे स्थान जतन करा",
+    "maxPlacesReached": "कमाल ५ स्थाने जतन केली आहेत.",
+    "noResults": "कोणतेही स्थान आढळले नाही.",
+    "coordinatesRoundedNotice": "गोपनीयतेसाठी निर्देशांक २ दशांश स्थानांपर्यंत मर्यादित केले आहेत."
+  },
+  "receipt": {
+    "title": "प्रभाव पावती",
+    "verifiedBy": "इंजिनद्वारे सत्यापित",
+    "action": "शिफारस केलेली कृती",
+    "baseline": "सध्याची परिस्थिती",
+    "alternative": "स्वच्छ पर्याय",
+    "estimatedChange": "अंदाजित बदल",
+    "method": "वैज्ञानिक पद्धत",
+    "assumptions": "गृहितके आणि घटक",
+    "dataUsed": "वापरलेला डेटा",
+    "engineVersion": "इंजिन आवृत्ती",
+    "aiExplanation": "एआय स्पष्टीकरण"
+  },
+  "settings": {
+    "title": "सेटिंग्ज आणि गोपनीयता",
+    "language": "भाषा",
+    "graphicsQuality": "3D ग्राफिक्स गुणवत्ता",
+    "qualityHigh": "उच्च (पूर्ण 3D)",
+    "qualityMedium": "मध्यम (संतुलित)",
+    "qualityLow": "कमी (बॅटरी सेव्हर)",
+    "qualityOff": "2D सुलभ मोड",
+    "privacy": "डिव्हाइसवरील संचयन",
+    "privacyDesc": "कौटुंबिक माहिती केवळ तुमच्या ब्राउझरमध्ये राहते, सर्व्हरवर पाठवली जात नाही.",
+    "clearData": "सर्व डेटा हटवा",
+    "dataCleared": "डेटा यशस्वीरीत्या हटवला गेला."
+  },
+  "welcome": {
+    "welcomeTitle": "एरोसेन्स एआय मध्ये स्वागत आहे",
+    "welcomeSubtitle": "तुमचा स्वच्छ हवेचा बुद्धिमान मार्गदर्शक. हवा समजून घ्या, संरक्षण करा, प्रभाव सिद्ध करा.",
+    "step1": "पायरी १: तुमची भाषा निवडा",
+    "step2": "पायरी २: तुमचे स्थान ठरवा",
+    "getStarted": "एरोसेन्स एआय सुरू करा"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "language": "Gujarati",
+    "locale": "gu",
+    "script": "Gujarati",
+    "direction": "ltr",
+    "needsNativeReview": true
+  },
+  "common": {
+    "appName": "એરોસેન્સ એઆઈ",
+    "tagline": "હવાને ઓળખો. જોખમની આગાહી કરો. પરિવારનું રક્ષણ કરો. અસર સાબિત કરો.",
+    "loading": "પર્યાવરણીય ડેટા લોડ થઈ રહ્યો છે...",
+    "error": "એક ભૂલ આવી",
+    "retry": "ફરી પ્રયાસ કરો",
+    "simulatedBadge": "સિમ્યુલેટેડ (નમૂનો)",
+    "notConnected": "જોડાયેલ નથી",
+    "offlineBanner": "ઑફલાઇન મોડ. {time} નો સાચવેલ ડેટા દર્શાવાઈ રહ્યો છે.",
+    "disclaimer": "આરોગ્ય માહિતી માત્ર પર્યાવરણીય જાગૃતિ માટે છે, તબીબી સલાહ નથી.",
+    "units": {
+      "ugm3": "µg/m³",
+      "mgm3": "mg/m³",
+      "cadr": "m³/h",
+      "kmh": "કિમી/કલાક",
+      "celsius": "°C",
+      "percent": "%",
+      "meters": "મીટર",
+      "hpa": "hPa"
+    },
+    "confidence": {
+      "high": "ઉચ્ચ વિશ્વસનીયતા",
+      "medium": "મધ્યમ વિશ્વસનીયતા",
+      "low": "ઓછી વિશ્વસનીયતા",
+      "reasons": "વિશ્વસનીયતા પરિબળો"
+    },
+    "sources": {
+      "model": "વાતાવરણીય મોડેલ",
+      "station": "જમીની સ્ટેશન",
+      "satellite": "નાસા VIIRS ઉપગ્રહ",
+      "drone": "એરોસેન્સ ડ્રોન",
+      "simulated": "સિમ્યુલેટેડ ડેટા"
+    }
+  },
+  "nav": {
+    "overview": "ઝાંખી",
+    "live": "લાઈવ હવા વિશ્લેષણ",
+    "map": "પ્રદૂષણ નકશો",
+    "family": "પરિવાર સુરક્ષા",
+    "planner": "એઆઈ દૈનિક આયોજક",
+    "indoor": "ઘરની હવા સલાહકાર",
+    "whatIf": "વૉટ-ઇફ સિમ્યુલેટર",
+    "forecast": "પ્રદૂષણ પૂર્વાનુમાન",
+    "community": "સમુદાય કેન્દ્ર",
+    "copilot": "એઆઈ કોપાયલોટ",
+    "settings": "સેટિંગ્સ અને ગોપનીયતા"
+  },
+  "aqi": {
+    "categoryGood": "સારી",
+    "categorySatisfactory": "સંતોષકારક",
+    "categoryModerate": "મધ્યમ",
+    "categoryPoor": "ખરાબ",
+    "categoryVeryPoor": "ખૂબ ખરાબ",
+    "categorySevere": "ગંભીર",
+    "subIndex": "પેટા-સૂચકાંક",
+    "dominantPollutant": "મુખ્ય પ્રદૂષક",
+    "inversionRisk": "વ્યુત્ક્રમણ જોખમ",
+    "low": "ઓછું",
+    "moderate": "મધ્યમ",
+    "high": "વધુ"
+  },
+  "location": {
+    "title": "સ્થળ પસંદ કરો",
+    "changeLocation": "સ્થળ બદલો",
+    "searchTab": "શહેર / વિસ્તાર શોધો",
+    "searchPlaceholder": "ભારતીય શહેર અથવા વિસ્તાર શોધો...",
+    "useGps": "હાલનું સ્થાન વાપરો",
+    "gpsPrompt": "જીપીએસ સ્થાન મેળવી રહ્યું છે...",
+    "gpsPermissionDenied": "સ્થાન પરવાનગી નકારી. કૃપા કરીને શોધો અથવા શહેર પસંદ કરો.",
+    "mapTab": "નકશા પસંદગી",
+    "mapInstructions": "સ્થાન સેટ કરવા માટે નકશા પર ગમે ત્યાં ક્લિક કરો.",
+    "presetsTab": "લોકપ્રિય શહેરો",
+    "savedPlaces": "સાચવેલા સ્થળો",
+    "saveThisPlace": "આ સ્થળ સાચવો",
+    "maxPlacesReached": "મહત્તમ 5 સ્થળો સાચવેલા છે.",
+    "noResults": "કોઈ સ્થળ મળ્યું નથી.",
+    "coordinatesRoundedNotice": "તમારી ગોપનીયતા માટે કોઓર્ડિનેટ્સ 2 દશાંશ સ્થળો સુધી મર્યાદિત છે."
+  },
+  "receipt": {
+    "title": "અસર રસીદ",
+    "verifiedBy": "એન્જિન દ્વારા ચકાસાયેલ",
+    "action": "ભલામણ કરેલ પગલું",
+    "baseline": "હાલની પરિસ્થિતિ",
+    "alternative": "સ્વચ્છ વિકલ્પ",
+    "estimatedChange": "અંદાજિત ફેરફાર",
+    "method": "વૈજ્ઞાનિક પદ્ધતિ",
+    "assumptions": "ધારણાઓ અને પરિબળો",
+    "dataUsed": "વપરાયેલ ડેટા",
+    "engineVersion": "એન્જિન આવૃત્તિ",
+    "aiExplanation": "એઆઈ સમજૂતી"
+  },
+  "settings": {
+    "title": "સેટિંગ્સ અને ગોપનીયતા",
+    "language": "ભાષા",
+    "graphicsQuality": "3D ગ્રાફિક્સ ગુણવત્તા",
+    "qualityHigh": "ઉચ્ચ (સંપૂર્ણ 3D અસરો)",
+    "qualityMedium": "મધ્યમ (સંતુલિત)",
+    "qualityLow": "ઓછી (બેટરી બચત)",
+    "qualityOff": "2D મોડ",
+    "privacy": "સ્થાનિક ઉપકરણ સંગ્રહ",
+    "privacyDesc": "પરિવારની વિગતો માત્ર તમારા બ્રાઉઝરમાં સાચવવામાં આવે છે, સર્વર પર મોકલવામાં આવતી નથી.",
+    "clearData": "બધો ડેટા સાફ કરો",
+    "dataCleared": "ડેટા સફળતાપૂર્વક સાફ કરવામાં આવ્યો."
+  },
+  "welcome": {
+    "welcomeTitle": "એરોસેન્સ એઆઈ માં આપનું સ્વાગત છે",
+    "welcomeSubtitle": "તમારું સ્વચ્છ હવા માર્ગદર્શક. હવા ઓળખો, રક્ષણ કરો, અસર સાબિત કરો.",
+    "step1": "પગલું 1: તમારી ભાષા પસંદ કરો",
+    "step2": "પગલું 2: તમારું સ્થાન નક્કી કરો",
+    "getStarted": "એરોસેન્સ એઆઈ શરૂ કરો"
+  }
+}

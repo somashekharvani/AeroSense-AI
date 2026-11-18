@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AeroSense AI Multilingual Terminology Glossary",
+  "description": "Authoritative glossary of scientific, atmospheric and health terms across 11 languages to ensure translation consistency.",
+  "terms": {
+    "aqi": {
+      "definition": "Air Quality Index (CPCB standard for India)",
+      "translations": {
+        "en": "Air Quality Index (AQI)",
+        "hi": "वायु गुणवत्ता सूचकांक (AQI)",
+        "kn": "ವಾಯು ಗುಣಮಟ್ಟ ಸೂಚ್ಯಂಕ (AQI)",
+        "ta": "காற்றுத் தரக் குறியீடு (AQI)",
+        "te": "గాలి నాణ్యత సూచిక (AQI)",
+        "ml": "വായു ഗുണനിലവാര സൂചിക (AQI)",
+        "mr": "हवा गुणवत्ता निर्देशांक (AQI)",
+        "bn": "বায়ু মান সূচক (AQI)",
+        "gu": "હવા ગુણવત્તા સૂચકાંક (AQI)",
+        "pa": "ਹਵਾ ਗੁਣਵੱਤਾ ਸੂਚਕਾਂਕ (AQI)",
+        "ur": "ایئر کوالٹی انڈیکس (AQI)"
+      }
+    },
+    "pm25": {
+      "definition": "Particulate matter with aerodynamic diameter <= 2.5 micrometers",
+      "translations": {
+        "en": "PM2.5 (Fine Particulate Matter)",
+        "hi": "पीएम 2.5 (महीन कण)",
+        "kn": "ಪಿಎಂ 2.5 (ಸೂಕ್ಷ್ಮ ಕಣಗಳು)",
+        "ta": "பிஎம் 2.5 (நுண் துகள்கள்)",
+        "te": "పీఎం 2.5 (సూక్ష్మ కణాలు)",
+        "ml": "പിഎം 2.5 (സൂക്ഷ്മ കണികകൾ)",
+        "mr": "पीएम 2.5 (सूक्ष्म कण)",
+        "bn": "পিএম ২.৫ (সূক্ষ্ম ধূলিকণা)",
+        "gu": "પીએમ 2.5 (ઝીણા રજકણો)",
+        "pa": "ਪੀਐਮ 2.5 (ਬਰੀਕ ਕਣ)",
+        "ur": "پی ایم 2.5 (باریک ذرات)"
+      }
+    },
+    "pm10": {
+      "definition": "Particulate matter with aerodynamic diameter <= 10 micrometers",
+      "translations": {
+        "en": "PM10 (Coarse Particulate Matter)",
+        "hi": "पीएम 10 (श्वसनीय धूल कण)",
+        "kn": "ಪಿಎಂ 10 (ಉಸಿರಾಡುವ ಧೂಳಿನ ಕಣಗಳು)",
+        "ta": "பிஎம் 10 (சுவாசத் துகள்கள்)",
+        "te": "పీఎం 10 (ధూళి కణాలు)",
+        "ml": "പിഎം 10 (പൊടി കണികകൾ)",
+        "mr": "पीएम 10 (धूलिकण)",
+        "bn": "পিএম ১০ (শ্বাসযোগ্য ধূলিকণা)",
+        "gu": "પીએમ 10 (ધૂળના રજકણો)",
+        "pa": "ਪੀਐਮ 10 (ਮੋਟੇ ਕਣ)",
+        "ur": "پی ایم 10 (موٹے ذرات)"
+      }
+    },
+    "inversion": {
+      "definition": "Temperature inversion where warmer air caps cooler air trapping pollutants near ground",
+      "translations": {
+        "en": "Temperature Inversion (Smog Lid)",
+        "hi": "तापमान व्युत्क्रमण (स्मॉग ढक्कन)",
+        "kn": "ತಾಪಮಾನ ವಿಲೋಮ (ಹೊಗೆ ಮುಚ್ಚಳ)",
+        "ta": "வெப்பநிலை தலைகீழ் மாற்றம் (புகை மூடி)",
+        "te": "ఉష్ణోగ్రత విలోమం (పొగ మూత)",
+        "ml": "താപനില വിപരീതത്വം (പുക മൂടി)",
+        "mr": "तापमान उलटे होणे (धुके झाकण)",
+        "bn": "তাপমাত্রা বিপরীতায়ন (ধোঁয়াশা ঢাকনা)",
+        "gu": "તાપમાન વ્યુત્ક્રમણ (ધુમ્મસ ઢાંકણ)",
+        "pa": "ਤਾਪਮਾਨ ਉਲਟਾਵ (ਧੁੰਦ ਦਾ ਢੱਕਣ)",
+        "ur": "حرارتی الٹاؤ (سموگ ڈھکن)"
+      }
+    },
+    "purifier": {
+      "definition": "HEPA air purifier device",
+      "translations": {
+        "en": "Air Purifier",
+        "hi": "वायु शोधक (एयर प्यूरीफायर)",
+        "kn": "ಏರ್ ಪ್ಯೂರಿಫೈಯರ್",
+        "ta": "காற்று சுத்திகரிப்பான்",
+        "te": "ఎయిర్ ప్యూరిఫైయర్",
+        "ml": "എയർ പ്യൂരിഫയർ",
+        "mr": "एअर प्युरिफायर",
+        "bn": "বায়ু বিশোধক (এয়ার পিউরিফায়ার)",
+        "gu": "એર પ્યુરિફાયર",
+        "pa": "ਏਅਰ ਪਿਊਰੀਫਾਇਰ",
+        "ur": "ایئر پیوریفائر"
+      }
+    },
+    "cadr": {
+      "definition": "Clean Air Delivery Rate (m3/h)",
+      "translations": {
+        "en": "Clean Air Delivery Rate (CADR)",
+        "hi": "स्वच्छ वायु वितरण दर (CADR)",
+        "kn": "ಸ್ವಚ್ಛ ಗಾಳಿ ವಿತರಣಾ ದರ (CADR)",
+        "ta": "சுத்தமான காற்று விநியோக விகிதம் (CADR)",
+        "te": "స్వచ్ఛమైన గాలి పంపిణీ రేటు (CADR)",
+        "ml": "ശുദ്ധവായു വിതരണ നിരക്ക് (CADR)",
+        "mr": "स्वच्छ हवा वितरण दर (CADR)",
+        "bn": "পরিষ্কার বায়ু সরবরাহ হার (CADR)",
+        "gu": "સ્વચ્છ હવા વિતરણ દર (CADR)",
+        "pa": "ਸਾਫ਼ ਹਵਾ ਪ੍ਰਦਾਨ ਦਰ (CADR)",
+        "ur": "کلین ایئر ڈلیوری ریٹ (CADR)"
+      }
+    },
+    "exposure_dose": {
+      "definition": "Calculated inhaled pollutant mass in micrograms",
+      "translations": {
+        "en": "Inhaled Exposure Dose",
+        "hi": "श्वास द्वारा ग्रहण की गई मात्रा",
+        "kn": "ಉಸಿರಾಡಿದ ಮಾಲಿನ್ಯ ಪ್ರಮಾಣ",
+        "ta": "சுவாசித்த மாசளவு",
+        "te": "పీల్చిన కాలుష్య మోతాదు",
+        "ml": "ശ്വാസത്തിലൂടെ എടുത്ത അളവ്",
+        "mr": "श्वासाद्वारे गेलेली मात्रा",
+        "bn": "শ্বাসবাহিত দূষণের মাত্রা",
+        "gu": "શ્વાસમાં લીધેલ પ્રદૂષણ માત્રા",
+        "pa": "ਸਾਹ ਰਾਹੀਂ ਲਈ ਪ੍ਰਦੂਸ਼ਣ ਮਾਤਰਾ",
+        "ur": "سانس میں جانے والی آلودگی کی مقدار"
+      }
+    },
+    "impact_receipt": {
+      "definition": "Verifiable breakdown of quantified environmental or exposure impact",
+      "translations": {
+        "en": "Impact Receipt",
+        "hi": "प्रभाव रसीद (इम्पैक्ट रसीद)",
+        "kn": "ಪರಿಣಾಮ ರಸೀದಿ",
+        "ta": "தாக்க ரசீது",
+        "te": "ప్రభావ రసీదు",
+        "ml": "പ്രത്യാഘാത രസീത്",
+        "mr": "प्रभाव पावती",
+        "bn": "প্রভাব রসিদ",
+        "gu": "અસર રસીદ",
+        "pa": "ਪ੍ਰਭਾਵ ਰਸੀਦ",
+        "ur": "اثر کی رسید"
+      }
+    }
+  }
+}
