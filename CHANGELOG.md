@@ -4,6 +4,20 @@ All notable changes to the AeroSense AI platform will be documented in this file
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Phase 4: Gemini Planner, Fact Validator & Resilient Fallback] - 2026-11-18
+
+### Added
+- **Official Google GenAI SDK**: Integrated `@google/genai` with model configuration via `GEMINI_MODEL` (`gemini-2.5-flash` default).
+- **Zero Number Fabrication & Strict Fact Citation Validator**: `lib/validation/fact-validator.ts` extracts all numerical claims (including Indic numerals via `normalizeNumerals`) and rejects any response containing numbers not present in the authorized `FactsObject` or citing hallucinated fact IDs.
+- **Privacy Redaction & Prompt Injection Guard**: `lib/privacy/redact.ts` scrubs PII (emails, phone numbers), maps family members to privacy-preserving demographic tokens (`Member 1 (child)`), and blocks prompt injection/jailbreak attempts.
+- **Deterministic Offline Fallback Planner**: `engines/fallback-planner.ts` produces 100% offline, verified 24-hour routines, clean-air windows, and actionable recommendations with fact citations when Gemini is unavailable, rate-limited, or fails validation.
+- **Strict Plan Schema**: `lib/validation/plan-schema.ts` defining `GeminiPlanResponseSchema`, `HourlyRoutineItemSchema`, and `RecommendationItemSchema`.
+- **Gemini Service**: `services/gemini.ts` orchestrating prompt assembly with system constraints, timeout enforcement (9s), Zod schema parsing, fact validation, and automatic fallback.
+- **API Route**: `POST /api/plan` (`app/api/plan/route.ts`) orchestrating demographic sanitization, dynamic engine fact generation, Gemini planning, and graceful fallback.
+- **Testing**: 5 new test suites with 16 new tests (total 20 test files, 112 passing tests) and 0 TypeScript errors.
+
+---
+
 ## [Phase 3: Live Data Services, Fusion & Caching] - 2026-11-18
 
 ### Added

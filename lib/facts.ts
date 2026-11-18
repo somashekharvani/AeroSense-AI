@@ -138,6 +138,8 @@ export function normalizeScriptDigits(text: string): string {
   return normalized;
 }
 
+export const normalizeNumerals = normalizeScriptDigits;
+
 /**
  * Extracts all distinct floating-point and integer numbers from a string,
  * automatically converting Indic & Arabic-Indic numerals.
