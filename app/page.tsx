@@ -26,6 +26,7 @@ import { SourceBadge } from '@/components/ui/source-badge';
 import { SourceStatusStrip } from '@/components/dashboard/source-status-strip';
 import { BacktestPanel } from '@/components/dashboard/backtest-panel';
 import { ImpactReceiptCard } from '@/components/impact-receipts/impact-receipt-card';
+import { AtmosphereScene } from '@/components/three';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -270,6 +271,15 @@ export default function OverviewPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* 3D Atmospheric Inversion & Smog Dynamics Experience */}
+      <AtmosphereScene
+        pm25={snapshot?.fusedAir?.pollutants?.pm25 ?? 75}
+        aqi={aqiData?.aqi ?? 150}
+        boundaryLayerHeightM={atmosphere?.boundaryLayerHeightM ?? 400}
+        inversionScore={invData?.score ?? 45}
+        windSpeedKmh={atmosphere?.windSpeedKmh ?? 6}
+      />
 
       {/* Criteria Pollutants Breakdown Grid */}
       {aqiData?.subIndices && (
