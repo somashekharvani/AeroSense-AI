@@ -53,10 +53,22 @@ npm install
 ```
 
 ### Environment Setup
-Copy `.env.example` to `.env.local` and add server-side keys:
+Create `.env.local` and add server-side keys (never exposed to the browser):
 ```bash
-cp .env.example .env.local
+# Google Gemini API Key & Model
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_MODEL=gemini-2.5-flash
+
+# WAQI (World Air Quality Index) Token for CPCB Ground Station Telemetry
+WAQI_TOKEN=your_waqi_token_here
+
+# NASA FIRMS Map Key for VIIRS NRT Satellite Active Fire Points
+FIRMS_MAP_KEY=your_firms_map_key_here
+
+# Optional: Hardware Drone Ingest Shared Secret
+DRONE_INGEST_SECRET=your_optional_secret_here
 ```
+*Note: If API keys are omitted, the application uses Open-Meteo (free, keyless) and deterministic fallbacks with full functionality.*
 
 ### Development Server
 ```bash
@@ -64,31 +76,68 @@ npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Automated Tests
+### Verification & Testing
 ```bash
-# Unit & Translation Parity Tests (Vitest)
+# 1. Run All 120 Unit & Integration Tests (Vitest)
 npm run test:unit
 
-# Type Check
+# 2. Strict TypeScript Typecheck
 npm run typecheck
 
-# End-to-End Tests (Playwright)
-npm run test:e2e
+# 3. Production Build
+npm run build
 ```
 
 ---
 
-## Phase 1 Status Report
+## Complete Page & Feature Tour
+
+| Route | Pillar / Feature | Highlights |
+| :--- | :--- | :--- |
+| `/` | **Overview** | Atmospheric 3D Inversion Scene, live CPCB AQI summary, quick cards for all 5 pillars, and source telemetry strip. |
+| `/live` | **Pillar 1: Know** | Live Indian CPCB National AQI, criteria pollutants breakdown (PM2.5, PM10, NO2, SO2, CO, O3), atmospheric profile, and incident alerts. |
+| `/forecast` | **Pillar 2: Predict** | 48-hour hourly outlook strip, nocturnal inversion compression spikes, boundary-layer dynamics, and backtest calibration panel (MAE, RMSE, bias). |
+| `/family` | **Pillar 3: Protect** | On-device IndexedDB family manager, per-person inhaled PM2.5 dose ($\mu\text{g}$), WHO daily budget limits, and cigarette smoke equivalents. |
+| `/planner` | **Clean-Air Planner** | AI-generated or deterministic offline 24-hour routine, clean-air ventilation windows, actionable recommendations, and scientific fact audit viewer. |
+| `/indoor` | **Pillar 4: Home** | Interactive 3D room cutaway with window infiltration and purifier plume, mass-balance differential equation solver, ventilate-vs-seal decision, CADR calculator, and Corsi-Rosenthal DIY box specs. |
+| `/what-if` | **Pillar 5: Act** | Interactive modal shift simulator (petrol two-wheeler vs metro vs bus), cooking fuel cleaner transitions, and purifier operation with auditable **Impact Receipts**. |
+| `/community` | **Community** | Clean-Air Decision Score calculator (0-100 score strictly of household actions, zero clinical claims), and sectoral advisories for schools, seniors, and site managers. |
+| `/copilot` | **AI Copilot** | Fact-grounded environmental assistant powered by Gemini 2.5 Flash, system prompt injection filtering, strict fact citations, and deterministic offline fallback. |
+| `/map` | **Spatial Radar** | OpenStreetMap radar showing 10/25/50km distance rings, nearby monitoring stations, wind transport vectors, and NASA FIRMS fire detections with estimated downwind arcs. |
+| `/api/drone/ingest`| **AeroSense Drone** | UAV telemetry ingestion endpoint (`POST`) and simulated flight demo (`GET ?demo=true`) with Zod schema validation and `SIMULATED` badge. |
+
+---
+
+## Vercel Deployment
+
+AeroSense AI is designed for seamless deployment on Vercel:
+
+1. Push the repository to GitHub.
+2. Import the project into Vercel.
+3. Configure the Environment Variables in the Vercel Project Settings:
+   - `GEMINI_API_KEY`
+   - `GEMINI_MODEL` (`gemini-2.5-flash`)
+   - `WAQI_TOKEN` (optional for live CPCB stations)
+   - `FIRMS_MAP_KEY` (optional for live NASA FIRMS active fires)
+4. Deploy! All API keys remain strictly on the server-side Next.js route handlers.
+
+---
+
+## Status Report
 
 ### What Works
-- **App Shell**: Next.js 15 App Router + React 19 + Tailwind CSS v4 running cleanly in dark environmental-intelligence theme.
-- **Design System**: CPCB 6-step AQI scale (Good, Satisfactory, Moderate, Poor, Very Poor, Severe) with guaranteed color-independence (icon + text label + value), `ConfidenceBadge`, `SourceBadge` (Model, Station, Satellite, Drone, SIMULATED), and `ImpactReceiptCard` expandable audit drawer.
-- **11 Languages & RTL**: Instant switching between 11 languages without full-page reloads. Layout mirrors properly in Urdu (`dir="rtl"`). 100% key parity verified by 41 Vitest unit tests.
-- **Location System**: 4 selection mechanisms (Open-Meteo geocoding search, browser GPS with 2-decimal privacy rounding, 12 preset Indian cities, and saved places manager). State is synchronized with URL query params (`?lat=28.61&lon=77.21&lang=hi`) and persisted in IndexedDB.
-- **10 Pages**: All core pages accessible via responsive sidebar on desktop and bottom navigation on mobile.
+- **Deterministic Scientific Engines**: 7 pure mathematical engines (`indian-aqi`, `inversion`, `exposure`, `indoor-air`, `impact`, `forecasting`, `decision-score`, `incident`) running with zero network dependencies.
+- **Auditable Impact Receipts**: Complete mathematical tracking for all simulated decisions (action, baseline, alternative, change with units, assumptions, confidence level, engine version).
+- **Gemini Planner & Strict Fact Validator**: `@google/genai` integration with zero number fabrication validator, system prompt injection protection, demographic sanitization, and automatic offline fallback.
+- **3D Atmospheric & Indoor Visualizations**: Three.js/Fiber/Drei scenes for atmospheric thermal inversion, interactive room mass-balance cutaway, and drone telemetry HUD. Full accessibility toggle and `prefers-reduced-motion` support.
+- **11 Languages & RTL**: Flawless switching across English, Hindi, Kannada, Tamil, Telugu, Malayalam, Marathi, Bengali, Gujarati, Punjabi, and Urdu (with bidirectional `dir="rtl"` layout).
+- **Comprehensive Test Suite**: 22 test files with 120 passing unit/integration tests and zero TypeScript errors (`tsc --noEmit`).
+- **Drone Telemetry Endpoint**: Compliant Zod-validated hardware API with simulated flight demo and strict safety rules (MQ135 treated as relative gas trend only; never feeds NAQI).
 
 ### What is Simulated
-- Overview demo Impact Receipt (`DEMO-001`) displaying the audit shell structure before Phase 2 engines are attached.
+- When external API keys (`WAQI_TOKEN`, `FIRMS_MAP_KEY`) are not supplied in `.env.local`, the system automatically falls back to Open-Meteo CAMS models and clearly marks sample satellite anomalies with `SIMULATED` or `ESTIMATE` badges.
+- `/api/drone/ingest?demo=true` generates simulated quadcopter flight telemetry with an explicit `SIMULATED` badge and "Not Connected" status for physical hardware.
 
 ### What is Unverified
-- The 10 non-English translation files are marked `"needsNativeReview": true` awaiting human native speaker review for nuanced health phrasing.
+- The 10 non-English translation files (`messages/*.json`) are functional and cover 100% of keys, but retain `"needsNativeReview": true` awaiting final review by native Indian language speakers for nuanced colloquial health expressions.
+- The default physical building infiltration coefficients and vehicle emission factors live in `engines/config/assumptions.ts` with explicit source citations and `"verified": false` flags pending local municipal calibration.

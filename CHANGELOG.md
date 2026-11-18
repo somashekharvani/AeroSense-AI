@@ -4,6 +4,64 @@ All notable changes to the AeroSense AI platform will be documented in this file
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Phase 7: Drone Hardware Ingest Endpoint & Simulated Flight Demo] - 2026-11-18
+
+### Added
+- **Drone Telemetry Ingestion Endpoint**: `POST /api/drone/ingest` and `GET /api/drone/ingest` with Zod schema `DronePacketSchema` validating hardware telemetry.
+- **Strict Compliance & Gas Trend Safety**: Telemetry enforces hardware safety constraints: MQ-135 is treated as a relative gas response trend only and NEVER feeds the CPCB NAQI calculation.
+- **Flight Demo & Connection Status**: Simulated flight telemetry demo (`GET /api/drone/ingest?demo=true`) prominently labelled `SIMULATED` badge; physical drone status reports "Not Connected" until verified live packets arrive.
+- **3D Quadcopter Drone Scene**: `components/three/drone-scene.tsx` rendering interactive UAV model with spinning rotors, downward LiDAR/particle sensor scan beam, and telemetry HUD overlay.
+- **Testing**: Complete unit testing in `tests/services/drone.test.ts` verifying Zod validation, demo mode responses, simulated badge enforcement, and error rejections.
+
+---
+
+## [Phase 6: Core Pages & Interactive Dashboards] - 2026-11-18
+
+### Added
+- **Pillar 1: Know (`app/live/page.tsx`)**:
+  - Live Indian CPCB National AQI calculated deterministically from fused pollutant concentrations.
+  - Criteria pollutants grid (PM2.5, PM10, NO2, SO2, CO, O3) with sub-index calculations, 24h/8h completeness thresholds, and dominant pollutant identification.
+  - Atmospheric profile cards displaying boundary layer height, lapse rate, and inversion status.
+  - Incident View alerting on satellite thermal points and estimated downwind dispersion zones.
+- **Pillar 2: Predict (`app/forecast/page.tsx`)**:
+  - 48-hour hourly outlook strip visualizing air quality progression, boundary layer compression, and nocturnal inversion spikes.
+  - Backtest calibration card comparing past forecast hours against ground-truth station observations with MAE, RMSE, and bias metrics.
+- **Pillar 3: Protect (`app/family/page.tsx`)**:
+  - Per-person inhaled PM2.5 dose calculator ($\mu\text{g}$) parameterized by age-appropriate EPA ventilation rates.
+  - Privacy-preserving family profile manager stored exclusively on-device in IndexedDB (`idb-keyval`).
+  - WHO guideline daily dose threshold comparison and approximate cigarette smoke equivalence.
+- **Clean-Air Planner (`app/planner/page.tsx`)**:
+  - Interactive 24-hour routine planner combining hourly air quality, clean-air ventilation windows, and priority actionable recommendations.
+  - Strict fact citation viewer allowing users to audit every recommendation against scientific facts.
+- **Pillar 4: Home (`app/indoor/page.tsx`)**:
+  - Real-time indoor air mass-balance differential equation solver computing steady-state and transient PM2.5 concentrations.
+  - Dynamic 3D cutaway room visualization (`components/three/indoor-room-scene.tsx`) with animated outdoor infiltration, cooking emissions, and HEPA purifier CADR exhaust cone.
+  - Ventilate-or-seal decision matrix, purifier CADR sizing calculator based on room volume and target air changes per hour (ACH), and DIY Corsi-Rosenthal box builder specs.
+- **Pillar 5: Act (`app/what-if/page.tsx`)**:
+  - What-If simulator evaluating three actionable sustainability scenarios: commute modal shift (petrol 2-wheeler vs metro vs electric bus), cooking fuel (chulha/biomass vs LPG/induction), and air purifier operation.
+  - Auditable `ImpactReceiptCard` for every simulated action showing exact reduction, baseline, alternative, method, assumptions, and confidence.
+- **Community & Decision Score (`app/community/page.tsx`)**:
+  - Clean-Air Decision Score calculator (0-100) scoring verifiable household proactive actions (purifier usage, sealed windows, clean commute, low-emission cooking) with strictly zero clinical health diagnosis.
+  - Sector-specific advisories for vulnerable groups (schools, senior citizens, construction managers, municipal waste monitors).
+- **AI Copilot (`app/copilot/page.tsx`)**:
+  - Interactive air quality conversational assistant grounded exclusively in validated environmental facts.
+  - System prompt injection defense and offline fallback mode ensuring uninterrupted guidance.
+- **Spatial Map (`app/map/page.tsx`)**:
+  - OpenStreetMap spatial radar showing user location, nearby CPCB monitoring stations, distance rings (10km, 25km, 50km), wind direction transport vector, and active NASA FIRMS fire detections with downwind estimate arcs.
+
+---
+
+## [Phase 5: 3D Atmospheric Inversion & Experience] - 2026-11-18
+
+### Added
+- **Three.js & React Three Fiber Engine**: Embedded 3D environmental visualization stack (`three`, `@react-three/fiber`, `@react-three/drei`).
+- **Mathematical Particle & Boundary Layer Mapping**: `components/three/scene-math.ts` mapping physical metrics (PM2.5 concentration, CPCB AQI color bands, boundary layer height in meters) to particle density, velocity, and vertical compression ceiling height.
+- **3D Atmospheric Inversion Scene**: `components/three/atmosphere-scene.tsx` rendering ground plane, particulate cloud, wind vector drift, and glowing inversion lid ceiling illustrating thermal trapping.
+- **WebGL Capability & Accessibility Guard**: `components/three/canvas-container.tsx` detecting WebGL support, honoring `prefers-reduced-motion`, and providing seamless fallback to 2D accessible charts.
+- **Hydration Safety**: Dynamic client-only exports (`ssr: false`) preventing Next.js SSR hydration mismatches.
+
+---
+
 ## [Phase 4: Gemini Planner, Fact Validator & Resilient Fallback] - 2026-11-18
 
 ### Added

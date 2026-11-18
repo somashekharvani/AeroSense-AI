@@ -4,6 +4,10 @@ import * as React from 'react';
 import { useLocation } from '@/components/location/location-provider';
 import { useLanguage } from '@/lib/i18n/context';
 
+import { IndianAqiResult } from '@/engines/indian-aqi';
+import { InversionRiskResult } from '@/engines/inversion';
+import { IncidentViewResult } from '@/engines/incident';
+
 export interface SnapshotData {
   coordinates: { lat: number; lon: number };
   fusedAir: {
@@ -23,33 +27,8 @@ export interface SnapshotData {
       reasons: string[];
     };
   };
-  indianAqi: {
-    aqi: number;
-    category: 'Good' | 'Satisfactory' | 'Moderate' | 'Poor' | 'Very Poor' | 'Severe';
-    dominantPollutant: string;
-    dominantPollutantName: string;
-    isPartial: boolean;
-    partialReason?: string;
-    subIndices: Record<string, {
-      pollutant: string;
-      name: string;
-      concentration: number;
-      unit: string;
-      subIndex: number;
-      category: string;
-    }>;
-  };
-  inversionRisk: {
-    score: number;
-    level: 'Low' | 'Moderate' | 'High';
-    hasPositiveGradient: boolean;
-    gradient925CPer100m: number | null;
-    reasons: string[];
-    confidence: {
-      level: 'high' | 'medium' | 'low';
-      reasons: string[];
-    };
-  };
+  indianAqi: IndianAqiResult;
+  inversionRisk: InversionRiskResult;
   atmosphere: {
     temperature2m: number;
     humidityPct: number;
@@ -59,19 +38,7 @@ export interface SnapshotData {
     cloudCoverPct: number;
     surfaceElevationM: number;
   };
-  incidentView: {
-    nearbyThermalDetections: Array<{
-      latitude: number;
-      longitude: number;
-      distanceKm: number;
-      confidence: string;
-    }>;
-    downwindSector: {
-      downwindBearingDeg: number;
-      spreadAngleDeg: number;
-    };
-    smokeTrajectoryNotice: string;
-  };
+  incidentView: IncidentViewResult;
   sourceStatus: {
     openMeteo: {
       status: 'online' | 'offline';
