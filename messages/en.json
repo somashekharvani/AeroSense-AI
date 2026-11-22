@@ -42,7 +42,8 @@
     }
   },
   "nav": {
-    "overview": "Overview",
+    "home": "Home",
+    "overview": "Dashboard Overview",
     "live": "Live Air Intelligence",
     "map": "Pollution Map",
     "family": "Family Protection",
@@ -52,6 +53,7 @@
     "forecast": "Pollution Forecast",
     "community": "Community Hub",
     "copilot": "AI Copilot",
+    "drone": "AeroSense Drone Lab",
     "settings": "Settings & Privacy"
   },
   "aqi": {

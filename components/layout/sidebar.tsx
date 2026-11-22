@@ -14,6 +14,8 @@ import {
   TrendingUp,
   Share2,
   Bot,
+  Sparkles,
+  Navigation,
   X,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -26,7 +28,8 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { href: '/', key: 'overview', icon: LayoutDashboard },
+  { href: '/', key: 'home', icon: Sparkles },
+  { href: '/overview', key: 'overview', icon: LayoutDashboard },
   { href: '/live', key: 'live', icon: Activity },
   { href: '/map', key: 'map', icon: Map },
   { href: '/family', key: 'family', icon: Users },
@@ -36,6 +39,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: '/forecast', key: 'forecast', icon: TrendingUp },
   { href: '/community', key: 'community', icon: Share2 },
   { href: '/copilot', key: 'copilot', icon: Bot },
+  { href: '/drone', key: 'drone', icon: Navigation },
 ];
 
 export function Sidebar({

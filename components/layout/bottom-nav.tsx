@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Activity, Map, CalendarCheck, Menu } from 'lucide-react';
+import { LayoutDashboard, Activity, Map, Sparkles, Menu } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 
@@ -12,10 +12,10 @@ export function BottomNav({ onOpenMenu }: { onOpenMenu: () => void }) {
   const pathname = usePathname();
 
   const items = [
-    { href: '/', key: 'overview', icon: LayoutDashboard },
+    { href: '/', key: 'home', icon: Sparkles },
+    { href: '/overview', key: 'overview', icon: LayoutDashboard },
     { href: '/live', key: 'live', icon: Activity },
     { href: '/map', key: 'map', icon: Map },
-    { href: '/planner', key: 'planner', icon: CalendarCheck },
   ];
 
   return (
