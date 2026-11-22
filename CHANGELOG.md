@@ -4,6 +4,59 @@ All notable changes to the AeroSense AI platform will be documented in this file
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Release 2.0: Environmental Intelligence Platform & Digital Twin Upgrade] - 2026-11-22
+
+### Added & Upgraded
+- **Priority 1 — Cinematic Landing Page (`/`)**:
+  - Implemented photorealistic 3D urban skyline (`components/landing/hero-city-scene.tsx`) with 35+ architectural buildings, PBR materials, warm atmospheric haze, particulate drift, and floating live AQI chip.
+  - Headline *"Breathe Smarter. Live Healthier."*, explanatory subtitle, dual CTAs (*"Explore Live Air"* & *"Discover AeroSense AI"*).
+  - Live Air Intelligence snapshot bar (`components/landing/live-preview-widget.tsx`).
+  - Interactive 5 Pillars showcase (Know, Predict, Protect, Home, Act) + AI Copilot.
+  - Science Engine vs Generative AI architecture flow diagram (`components/landing/how-it-works-section.tsx`).
+  - AeroSense Drone Lab preview teaser (`components/landing/drone-teaser-section.tsx`).
+  - Comprehensive environmental footer (`components/landing/landing-footer.tsx`).
+  - Dedicated `/overview` route preserving 100% of the live telemetry dashboard.
+
+- **Priority 2 — Functional Source Cards & Diagnostics**:
+  - Upgraded `SourceStatusStrip` into 5 functional, clickable cards separating CPCB Standard (in-engine deterministic calculation) from WAQI Ground Stations feed, NASA FIRMS satellite fire points, Open-Meteo weather/CAMS, and AeroSense Drone.
+  - Built `SourceDiagnosticsDialog` (`components/dashboard/source-diagnostics-dialog.tsx`): 5 tabbed diagnostic views with real-time connection status, API token guide, raw parameters ingested, CPCB formula citations, and sync triggers.
+  - Enhanced What-If cooking fuel scenario to physically distinguish **Reduction in Source Emissions** from **Modelled Room Concentration Impact** and **Particle Mass Emitted Avoided**.
+
+- **Priority 3 — Native Localization & Language Switcher Grouping**:
+  - Completed native-grade translations for English, Kannada (`kn`), and Hindi (`hi`).
+  - Grouped language switcher (`components/layout/language-switcher.tsx`) into Release 1 Primary Languages vs Upcoming Indian Scripts (with Preview badge).
+  - Maintained 100% key parity across all 11 locale files with 0 missing keys (`translation-parity.test.ts` passing).
+
+- **Priority 4 — 3D Atmospheric Inversion Digital Twin**:
+  - Rebuilt `components/three/atmosphere-scene.tsx` into a procedural urban canopy with 30+ buildings, rooftop HVAC/antennas, and CAAQMS telemetry mast.
+  - Vertical metric altitude scale ruler (0m - 1200m) with target indicator locked to boundary-layer height.
+  - Glowing amber inversion lid with animated breathing pulse and trapped particulate haze.
+  - Diurnal simulation controls: 04:00 AM Nocturnal Inversion Lid vs 02:00 PM Midday Convective Dispersion.
+
+- **Priority 5 — 3D MapLibre Spatial Pollution Map**:
+  - Built `components/map/pollution-map.tsx` using MapLibre GL with Carto Dark Matter raster tiles.
+  - Ground monitoring station markers colored by CPCB AQI breakpoints with clickable telemetry popups.
+  - Visualized $\pm 35^\circ$ Gaussian downwind smoke dispersion cone labelled prominently as `ESTIMATE`.
+  - NASA FIRMS active fire hotspots displaying satellite sensor and Fire Radiative Power (MW).
+  - 3D/2D pitch toggle, layer visibility toggles, and recenter controls.
+
+- **Priority 6 — 3D Indoor Room Digital Twin**:
+  - Upgraded `components/three/indoor-room-scene.tsx` with architectural cutaway, furniture (couch, coffee table, kitchen counter), window glass, and HEPA air purifier with animated vortex air cone.
+  - Bidirectionally synchronized 3D room controls with the sliders and state on `/indoor`.
+
+- **Priority 7 — Dedicated Drone Lab (`/drone`)**:
+  - Interactive 3D UAV model with spinning quad-rotors.
+  - Hardware honesty disclosure: separates active prototype (Arduino Nano + ESP8266 + MQ-135 + DHT22) from planned upgrades (PMS5003 laser optical sensor, LiDAR).
+  - Simulated flight demonstration with `SIMULATED` badge; physical link reports "Not Connected".
+
+- **Priority 8 & 9 — Performance & Quality Tiers**:
+  - Added Graphics Quality preset dropdown (High, Medium, Low, 2D Accessible) in `CanvasContainer`.
+  - Enforced `prefers-reduced-motion` and WebGL feature detection across all scenes.
+  - 100% test coverage: all 120 Vitest tests pass across 22 test files.
+  - 100% clean TypeScript strict typecheck (0 errors) and successful production build (`npm run build`).
+
+---
+
 ## [Phase 7: Drone Hardware Ingest Endpoint & Simulated Flight Demo] - 2026-11-18
 
 ### Added
