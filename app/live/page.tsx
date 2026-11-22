@@ -24,6 +24,7 @@ import { SourceStatusStrip } from '@/components/dashboard/source-status-strip';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+import { PollutionMap } from '@/components/map';
 
 export default function LiveAirPage() {
   const tNav = useTranslations('nav');
@@ -78,6 +79,22 @@ export default function LiveAirPage() {
         onRefresh={refetch}
         isRefreshing={isLoading}
       />
+
+      {/* 3D Spatial Vector Pollution Map */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Layers className="h-5 w-5 text-emerald-400" />
+            <h2 className="text-base font-bold text-white tracking-wide">
+              3D Spatial Vector Pollution Map & Dispersion Twin
+            </h2>
+          </div>
+          <span className="text-xs text-slate-400 font-mono">
+            {location.lat.toFixed(2)}°N, {location.lon.toFixed(2)}°E
+          </span>
+        </div>
+        <PollutionMap center={{ lat: location.lat, lon: location.lon }} snapshot={snapshot} />
+      </div>
 
       {/* Primary AQI & Meteorological Summary */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
