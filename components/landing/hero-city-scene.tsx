@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useMemo, useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
@@ -274,6 +275,8 @@ export function HeroCityScene({
   boundaryLayerHeightM = 380,
   lastUpdated,
 }: HeroCitySceneProps) {
+  const tLanding = useTranslations('landing');
+  const tAqi = useTranslations('aqi');
   const [autoRotate, setAutoRotate] = useState(true);
   const [hasWebGL, setHasWebGL] = useState(true);
 
@@ -302,9 +305,9 @@ export function HeroCityScene({
         /* Accessible 2D Fallback for Non-WebGL Devices */
         <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#0c151c] to-[#05080c] p-6 text-center">
           <div className="max-w-md space-y-3">
-            <h3 className="text-xl font-bold text-white font-display">Urban Atmospheric Digital Twin</h3>
+            <h3 className="text-xl font-bold text-white font-display">{tLanding('fallbackTitle')}</h3>
             <p className="text-xs text-slate-400">
-              Interactive 3D acceleration is not available in your browser. Live telemetry data for {cityName} remains fully operational below.
+              {tLanding('fallbackDesc', { cityName })}
             </p>
           </div>
         </div>
@@ -316,7 +319,7 @@ export function HeroCityScene({
           <div className="flex items-center justify-between gap-2">
             <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-emerald-400">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              Live Urban Twin
+              {tLanding('liveUrbanTwin')}
             </span>
             <span className="text-[10px] font-mono text-slate-400 truncate">
               {cityName}
@@ -329,14 +332,14 @@ export function HeroCityScene({
               <AQIBadge aqi={aqi} category={category} size="md" />
             </div>
             <div className="text-right">
-              <span className="text-[10px] text-slate-400 block mb-0.5">Dominant</span>
+              <span className="text-[10px] text-slate-400 block mb-0.5">{tAqi('dominantPollutant')}</span>
               <span className="text-xs font-bold font-mono text-white">{dominantPollutant}</span>
               <span className="text-[10px] font-mono text-slate-400 block">{pm25.toFixed(1)} µg/m³</span>
             </div>
           </div>
 
           <div className="border-t border-slate-800/60 pt-2 flex items-center justify-between text-[10px] text-slate-400">
-            <span>Boundary Layer: <strong className="text-slate-200 font-mono">{Math.round(boundaryLayerHeightM)}m</strong></span>
+            <span>{tLanding('boundaryLayer')}: <strong className="text-slate-200 font-mono">{Math.round(boundaryLayerHeightM)}m</strong></span>
             {lastUpdated && <span className="font-mono text-[9px]">{lastUpdated}</span>}
           </div>
         </div>
@@ -351,10 +354,10 @@ export function HeroCityScene({
           title="Toggle camera auto-rotation"
         >
           <RotateCw className={cn('h-3.5 w-3.5', autoRotate && 'text-emerald-400')} />
-          <span className="text-[11px]">{autoRotate ? 'Rotating' : 'Paused'}</span>
+          <span className="text-[11px]">{autoRotate ? tLanding('rotating') : tLanding('paused')}</span>
         </button>
         <span className="text-slate-700">|</span>
-        <span className="text-[10px] text-slate-400">Drag to orbit</span>
+        <span className="text-[10px] text-slate-400">{tLanding('dragToOrbit')}</span>
       </div>
 
       {/* Atmospheric Horizon Gradient Vignette */}

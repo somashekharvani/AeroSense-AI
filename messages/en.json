@@ -121,10 +121,19 @@
     "getStarted": "Enter AeroSense AI"
   },
   "landing": {
-    "headline": "Breathe Smarter. Live Healthier.",
-    "subtitle": "Real-time atmospheric intelligence, deterministic CPCB air quality indices, 48-hour inversion forecasting, and auditable household impact quantification.",
+    "badge": "Deterministic Clean-Air Decision Engine",
+    "headline": "Breathe Smarter.",
+    "headlineHighlight": "Live Healthier.",
+    "description": "AeroSense AI empowers families, schools, and communities across India to navigate severe winter smog and urban air pollution with deterministic low-emission routines, indoor air physics, and verifiable Impact Receipts.",
     "exploreLive": "Explore Live Air",
     "discoverApp": "Discover AeroSense AI",
+    "liveUrbanTwin": "Live Urban Twin",
+    "rotating": "Rotating",
+    "paused": "Paused",
+    "dragToOrbit": "Drag to orbit",
+    "boundaryLayer": "Boundary Layer",
+    "fallbackTitle": "Urban Atmospheric Digital Twin",
+    "fallbackDesc": "Interactive 3D acceleration is not available in your browser. Live telemetry data for {cityName} remains fully operational below.",
     "digitalTwin": "Next-Gen Environmental Digital Twin",
     "fivePillarsTitle": "Five Pillars of Clean-Air Defense",
     "fivePillarsSubtitle": "A comprehensive end-to-end framework helping families navigate urban smog with physics-based clarity."
@@ -134,6 +143,185 @@
     "subtitle": "Transparent verification of real-time feeds, deterministic calculation engines, and sensor telemetry.",
     "syncFeeds": "Sync Feeds",
     "activeEngine": "Deterministic Engine Active",
-    "zeroHallucination": "Zero Hallucination Guarantee"
+    "zeroHallucination": "Zero Hallucination Guarantee",
+    "openMeteoName": "Open-Meteo",
+    "openMeteoSub": "Weather & CAMS",
+    "cpcbName": "CPCB Standard",
+    "cpcbSub": "Oct 2014 Formula",
+    "waqiName": "WAQI Feed",
+    "waqiSub": "Ground Stations",
+    "nasaName": "NASA FIRMS",
+    "nasaSub": "Satellite Hotspots",
+    "droneName": "AeroSense Drone",
+    "droneSub": "UAV Payload",
+    "activeGrid": "Active Grid",
+    "deterministicEngine": "Deterministic Engine",
+    "tokenPending": "Token Pending",
+    "keyPending": "Key Pending",
+    "notConnected": "Not Connected",
+    "online": "Online",
+    "offline": "Offline",
+    "stripHeader": "Live Provider Telemetry & Ingestion Feeds",
+    "stripHint": "Click card for diagnostics"
+  },
+  "livePreview": {
+    "change": "Change",
+    "cpcbRegion": "CPCB Monitoring Region",
+    "dominant": "Dominant",
+    "surfaceTemp": "Surface Temperature",
+    "windSpeed": "Wind Velocity",
+    "humidity": "Relative Humidity",
+    "telemetryPending": "Telemetry sync pending...",
+    "fullLiveAir": "Full Live Air"
+  },
+  "pillars": {
+    "sectionTag": "The Five Pillars",
+    "sectionTitle": "How AeroSense AI Works",
+    "sectionDesc": "Our own deterministic scientific engines execute all the mathematics. Every quantified recommendation produces an auditable Impact Receipt citing raw data, baseline, and scientific methods.",
+    "know": {
+      "number": "Pillar 01",
+      "title": "Know",
+      "tagline": "Live Indian NAQI & Criteria Pollutants",
+      "description": "Fused multi-sensor observations (ground stations, Open-Meteo atmospheric profile, and NASA satellite fire anomalies) computed strictly through official CPCB October 2014 breakpoint interpolation.",
+      "h1": "CPCB October 2014 Scale",
+      "h2": "8 Criteria Pollutants",
+      "h3": "Fused Confidence Scoring"
+    },
+    "predict": {
+      "number": "Pillar 02",
+      "title": "Predict",
+      "tagline": "48-Hour Outlook & Inversion Risk",
+      "description": "Atmospheric thermal stability models calculate vertical lapse rates at 925 hPa and 850 hPa geopotential heights. Predicts nocturnal smog lids, boundary layer compression, and honest station backtesting.",
+      "h1": "925 hPa Lapse Rate",
+      "h2": "Nocturnal Smog Compression",
+      "h3": "Backtest MAE & RMSE"
+    },
+    "protect": {
+      "number": "Pillar 03",
+      "title": "Protect",
+      "tagline": "On-Device Family Exposure Budgets",
+      "description": "Calculate personalized inhaled PM2.5 mass doses (µg) using EPA Exposure Factors Handbook ventilation rates. Track daily limits against WHO guideline budgets. Stored strictly in browser IndexedDB.",
+      "h1": "EPA Inhaled Mass Dose",
+      "h2": "WHO Daily Allowances",
+      "h3": "Zero Server Data Leakage"
+    },
+    "home": {
+      "number": "Pillar 04",
+      "title": "Home",
+      "tagline": "Indoor PM2.5 Mass-Balance Model",
+      "description": "Solves the first-order differential equation dC/dt = P·a·C_out + S/V - λC in real time. Know when to seal or ventilate, size your air purifier CADR (m³/h), or build a low-cost Corsi-Rosenthal DIY box.",
+      "h1": "First-Order Mass Balance ODE",
+      "h2": "Purifier CADR Sizing",
+      "h3": "Corsi-Rosenthal Box Specs"
+    },
+    "act": {
+      "number": "Pillar 05",
+      "title": "Act",
+      "tagline": "What-If Simulator & Impact Receipts",
+      "description": "Simulate switching from a petrol two-wheeler to the Delhi Metro, transitioning cooking fuel from biomass to LPG, or running a HEPA purifier. Every quantified claim produces an auditable Impact Receipt.",
+      "h1": "Auditable Impact Receipts",
+      "h2": "Tailpipe & Inhaled Dose Math",
+      "h3": "Empirical Assumptions Log"
+    },
+    "copilot": {
+      "tag": "AI Copilot",
+      "title": "Fact-Grounded AI Copilot",
+      "tagline": "Gemini 2.5 Flash with Zero Number Fabrication",
+      "description": "Gemini plans and explains, but never invents science. Every answer is audited by a validator that rejects fabricated metrics and falls back to deterministic rules if unverified.",
+      "h1": "Cites Deterministic Fact IDs",
+      "h2": "Prompt Injection Defense",
+      "h3": "100% Offline Rule Fallback"
+    }
+  },
+  "howItWorks": {
+    "sectionTag": "Architecture & Integrity",
+    "sectionTitle": "Science Done Deterministically. AI for Explanation.",
+    "sectionDesc": "Unlike ordinary AI chat applications that hallucinate health figures, AeroSense AI enforces a strict boundary: our mathematical engines calculate the physics, while Gemini only explains the verified results.",
+    "step1": {
+      "num": "01",
+      "title": "Multi-Source Telemetry Ingestion",
+      "subtitle": "Open-Meteo • WAQI CPCB • NASA FIRMS • Drone",
+      "desc": "Continuous raw data acquisition from numerical atmospheric models, ground-level CPCB monitoring stations, and NASA VIIRS satellite thermal detections."
+    },
+    "step2": {
+      "num": "02",
+      "title": "Deterministic Scientific Engines",
+      "subtitle": "Pure Mathematical Models with Zero LLM Call",
+      "desc": "All science is computed deterministically: official CPCB linear interpolation, 925 hPa vertical lapse rates, EPA exposure doses, and indoor mass-balance ODEs."
+    },
+    "step3": {
+      "num": "03",
+      "title": "Auditable Facts Object Assembly",
+      "subtitle": "FACT-AQI-VALUE • FACT-INV-SCORE • FACT-EXP",
+      "desc": "Engine outputs are compiled into a strictly typed Facts Object with permanent citation IDs. Numbers not present in this registry can never be cited."
+    },
+    "step4": {
+      "num": "04",
+      "title": "Zero-Fabrication Explainable AI",
+      "subtitle": "Gemini 2.5 Flash + Audited Impact Receipts",
+      "desc": "Gemini plans and explains recommendations while a strict validator rejects hallucinated figures. Every claim outputs an auditable Impact Receipt."
+    }
+  },
+  "droneTeaser": {
+    "badge": "Hardware Innovation",
+    "statusNotConnected": "Status: Not Connected",
+    "demoSimulated": "Demo: SIMULATED",
+    "title": "AeroSense Drone — Aerial Microenvironment Sensing",
+    "description": "Our custom UAV payload samples vertical atmospheric columns, identifying surface inversion compression and localized emission plumes before they disperse across neighborhoods.",
+    "step1": "1. Sensors (MQ-135 + Temp)",
+    "step2": "2. Arduino Controller",
+    "step3": "3. ESP8266 Wi-Fi Link",
+    "step4": "4. AeroSense Engine",
+    "honestyNote": "*Hardware Honesty: The current prototype utilizes Arduino, ESP8266, MQ-135, and temperature sensing. The MQ-135 is evaluated strictly as a relative gas-response trend and never feeds the official CPCB NAQI. Optical particulate counters and LiDAR are planned future upgrades.",
+    "exploreLab": "Explore AeroSense Drone Lab",
+    "telemetryTitle": "Simulated Telemetry Feed",
+    "simulatedDemoBadge": "SIMULATED DEMO",
+    "altitudeLabel": "Flight Altitude",
+    "altitudeValue": "45.5 m AGL",
+    "batteryLabel": "Battery Level",
+    "batteryValue": "88%",
+    "mq135Label": "MQ-135 Gas Trend",
+    "mq135Elevated": "Elevated (420)",
+    "hardwareStateLabel": "Hardware State",
+    "disclaimer": "Software functions completely without physical drone connection."
+  },
+  "footer": {
+    "tagline": "Know the air. Predict the risk. Protect your family. Prove the impact.",
+    "mission": "Clean-Air Decision Engine engineered for PromptWars Challenge 6. All science is executed by pure deterministic mathematical engines; Gemini plans and explains; every quantified recommendation displays an auditable Impact Receipt.",
+    "coreIntelligence": "Core Intelligence",
+    "telemetryDashboard": "Telemetry Dashboard",
+    "pillar1": "Pillar 1: Live Indian AQI",
+    "pillar2": "Pillar 2: 48h Outlook & Inversion",
+    "pillar3": "Pillar 3: Family Exposure Budgets",
+    "pillar4": "Pillar 4: Indoor Mass-Balance",
+    "pillar5": "Pillar 5: What-If Simulator",
+    "droneLab": "AeroSense Drone Lab",
+    "scientificSources": "Scientific Sources",
+    "openMeteoSource": "Open-Meteo Weather & CAMS",
+    "waqiSource": "WAQI CPCB Ground Feeds",
+    "nasaSource": "NASA FIRMS VIIRS NRT",
+    "cpcbStandard": "CPCB NAQI Oct 2014 Standard",
+    "epaStandard": "US EPA Exposure Factors (2011)",
+    "healthNoticeLabel": "Health Notice:",
+    "healthNoticeText": "Health and exposure estimates generated by AeroSense AI are strictly for environmental guidance, routine planning, and awareness. They do not constitute clinical diagnosis, medical triage, or personal health prescriptions. Consult certified healthcare professionals for medical conditions.",
+    "privacyAssuranceLabel": "Privacy Assurance:",
+    "privacyAssuranceText": "Family profiles, sensitivities, and bookmarked places are persisted exclusively in your browser's local IndexedDB and are never transmitted to external servers. All outgoing Gemini AI calls are automatically scrubbed of personal identifiers.",
+    "copyright": "© 2026 AeroSense AI • PromptWars Challenge 6",
+    "subCopyright": "Deterministic Environmental Intelligence Platform"
+  },
+  "overview": {
+    "engineLive": "Deterministic Environmental Engine Live",
+    "cachedStale": "Cached Stale",
+    "dashboardTitle": "Environmental Dashboard",
+    "selectedCity": "Selected City: {name}",
+    "cpcbCardTitle": "Indian National AQI (CPCB)",
+    "cpcbCardDesc": "Computed strictly from CPCB October 2014 breakpoint interpolation.",
+    "cpcbIndex": "CPCB Index • {name}",
+    "dominantPollutant": "Dominant Pollutant",
+    "inversionCardTitle": "Atmospheric Inversion Risk",
+    "inversionCardDesc": "Physical risk score based on 925 hPa lapse rate and boundary-layer height.",
+    "inversionScore": "Inversion Risk Score",
+    "boundaryLayer": "Boundary Layer",
+    "telemetryUnavailable": "Telemetry unavailable for this coordinate."
   }
 }

@@ -12,6 +12,7 @@ import {
 import { SnapshotData } from '@/hooks/use-snapshot';
 import { formatLocaleDateTime } from '@/lib/utils';
 import { useLanguage } from '@/lib/i18n/context';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import {
   SourceDiagnosticsDialog,
@@ -32,6 +33,7 @@ export function SourceStatusStrip({
   isRefreshing?: boolean;
 }) {
   const { locale } = useLanguage();
+  const tDiag = useTranslations('diagnostics');
   const [dialogOpen, setDialogOpen] = React.useState(false);
   const [selectedSource, setSelectedSource] = React.useState<DiagnosticSource>('openMeteo');
 
@@ -54,8 +56,8 @@ export function SourceStatusStrip({
   }> = [
     {
       id: 'openMeteo',
-      name: 'Open-Meteo',
-      subtext: 'Weather & CAMS',
+      name: tDiag('openMeteoName'),
+      subtext: tDiag('openMeteoSub'),
       icon: Cpu,
       status: status.openMeteo?.status || 'online',
       detail: status.openMeteo?.lastUpdated
@@ -63,7 +65,7 @@ export function SourceStatusStrip({
             hour: '2-digit',
             minute: '2-digit',
           })
-        : 'Active Grid',
+        : tDiag('activeGrid'),
       statusClass:
         status.openMeteo?.status === 'online'
           ? 'text-emerald-400 bg-emerald-950/40 border-emerald-800/60 hover:bg-emerald-950/70 hover:border-emerald-600'
@@ -72,29 +74,29 @@ export function SourceStatusStrip({
     },
     {
       id: 'cpcb',
-      name: 'CPCB Standard',
-      subtext: 'Oct 2014 Formula',
+      name: tDiag('cpcbName'),
+      subtext: tDiag('cpcbSub'),
       icon: Zap,
       status: 'active',
       detail: status.cpcb?.dominantPollutant
         ? `Dom: ${status.cpcb.dominantPollutant}`
-        : 'Deterministic Engine',
+        : tDiag('deterministicEngine'),
       statusClass:
         'text-teal-300 bg-teal-950/40 border-teal-800/60 hover:bg-teal-950/70 hover:border-teal-500',
       dotColor: 'bg-teal-400',
     },
     {
       id: 'waqi',
-      name: 'WAQI Feed',
-      subtext: 'Ground Stations',
+      name: tDiag('waqiName'),
+      subtext: tDiag('waqiSub'),
       icon: Radio,
       status: status.waqi?.status || 'unconfigured',
       detail:
         status.waqi?.status === 'online'
-          ? status.waqi.stationName || 'Online'
+          ? status.waqi.stationName || tDiag('online')
           : status.waqi?.status === 'unconfigured'
-          ? 'Token Pending'
-          : 'Offline',
+          ? tDiag('tokenPending')
+          : tDiag('offline'),
       statusClass:
         status.waqi?.status === 'online'
           ? 'text-cyan-400 bg-cyan-950/40 border-cyan-800/60 hover:bg-cyan-950/70 hover:border-cyan-500'
@@ -103,16 +105,16 @@ export function SourceStatusStrip({
     },
     {
       id: 'nasaFirms',
-      name: 'NASA FIRMS',
-      subtext: 'VIIRS Hotspots',
+      name: tDiag('nasaName'),
+      subtext: tDiag('nasaSub'),
       icon: Satellite,
       status: status.nasaFirms?.status || 'unconfigured',
       detail:
         status.nasaFirms?.status === 'online'
-          ? `${status.nasaFirms.firePointsCount} points`
+          ? `${status.nasaFirms.firePointsCount} pts`
           : status.nasaFirms?.status === 'unconfigured'
-          ? 'Key Pending'
-          : 'Offline',
+          ? tDiag('keyPending')
+          : tDiag('offline'),
       statusClass:
         status.nasaFirms?.status === 'online'
           ? 'text-indigo-400 bg-indigo-950/40 border-indigo-800/60 hover:bg-indigo-950/70 hover:border-indigo-500'
@@ -121,11 +123,11 @@ export function SourceStatusStrip({
     },
     {
       id: 'drone',
-      name: 'AeroSense Drone',
-      subtext: 'Hardware Telemetry',
+      name: tDiag('droneName'),
+      subtext: tDiag('droneSub'),
       icon: Navigation,
       status: 'not_connected',
-      detail: 'Not Connected',
+      detail: tDiag('notConnected'),
       statusClass:
         'text-slate-400 bg-slate-900/40 border-slate-700/60 hover:bg-slate-900/70 hover:border-slate-500',
       dotColor: 'bg-slate-500',
@@ -138,11 +140,11 @@ export function SourceStatusStrip({
         <div className="flex items-center justify-between px-1">
           <span className="text-[11px] font-medium text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Live Provider Telemetry & Ingestion Feeds
+            {tDiag('stripHeader')}
           </span>
           <span className="text-[10px] text-slate-500 flex items-center gap-1">
             <Info className="h-3 w-3" />
-            Click card for diagnostics
+            {tDiag('stripHint')}
           </span>
         </div>
 

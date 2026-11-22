@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import {
   Activity,
   TrendingUp,
@@ -14,110 +15,93 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-interface Pillar {
-  id: string;
-  pillarNumber: string;
-  title: string;
-  tagline: string;
-  description: string;
-  href: string;
-  color: string;
-  borderHover: string;
-  accentBg: string;
-  icon: React.ElementType;
-  highlights: string[];
-}
-
-const PILLARS: Pillar[] = [
-  {
-    id: 'know',
-    pillarNumber: 'Pillar 01',
-    title: 'Know',
-    tagline: 'Live Indian NAQI & Criteria Pollutants',
-    description:
-      'Fused multi-sensor observations (ground stations, Open-Meteo atmospheric profile, and NASA satellite fire anomalies) computed strictly through official CPCB October 2014 breakpoint interpolation.',
-    href: '/live',
-    color: 'text-emerald-400',
-    borderHover: 'hover:border-emerald-500/50',
-    accentBg: 'bg-emerald-500/10',
-    icon: Activity,
-    highlights: ['CPCB October 2014 Scale', '8 Criteria Pollutants', 'Fused Confidence Scoring'],
-  },
-  {
-    id: 'predict',
-    pillarNumber: 'Pillar 02',
-    title: 'Predict',
-    tagline: '48-Hour Outlook & Inversion Risk',
-    description:
-      'Atmospheric thermal stability models calculate vertical lapse rates at 925 hPa and 850 hPa geopotential heights. Predicts nocturnal smog lids, boundary layer compression, and honest station backtesting.',
-    href: '/forecast',
-    color: 'text-teal-400',
-    borderHover: 'hover:border-teal-500/50',
-    accentBg: 'bg-teal-500/10',
-    icon: TrendingUp,
-    highlights: ['925 hPa Lapse Rate', 'Nocturnal Smog Compression', 'Backtest MAE & RMSE'],
-  },
-  {
-    id: 'protect',
-    pillarNumber: 'Pillar 03',
-    title: 'Protect',
-    tagline: 'On-Device Family Exposure Budgets',
-    description:
-      'Calculate personalized inhaled PM2.5 mass doses (µg) using EPA Exposure Factors Handbook ventilation rates. Track daily limits against WHO guideline budgets. Stored strictly in browser IndexedDB.',
-    href: '/family',
-    color: 'text-sky-400',
-    borderHover: 'hover:border-sky-500/50',
-    accentBg: 'bg-sky-500/10',
-    icon: ShieldAlert,
-    highlights: ['EPA Inhaled Mass Dose', 'WHO Daily Allowances', 'Zero Server Data Leakage'],
-  },
-  {
-    id: 'home',
-    pillarNumber: 'Pillar 04',
-    title: 'Home',
-    tagline: 'Indoor PM2.5 Mass-Balance Model',
-    description:
-      'Solves the first-order differential equation dC/dt = P·a·C_out + S/V - λC in real time. Know when to seal or ventilate, size your air purifier CADR (m³/h), or build a low-cost Corsi-Rosenthal DIY box.',
-    href: '/indoor',
-    color: 'text-indigo-400',
-    borderHover: 'hover:border-indigo-500/50',
-    accentBg: 'bg-indigo-500/10',
-    icon: Home,
-    highlights: ['First-Order Mass Balance ODE', 'Purifier CADR Sizing', 'Corsi-Rosenthal Box Specs'],
-  },
-  {
-    id: 'act',
-    pillarNumber: 'Pillar 05',
-    title: 'Act',
-    tagline: 'What-If Simulator & Impact Receipts',
-    description:
-      'Simulate switching from a petrol two-wheeler to the Delhi Metro, transitioning cooking fuel from biomass to LPG, or running a HEPA purifier. Every quantified claim produces an auditable Impact Receipt.',
-    href: '/what-if',
-    color: 'text-amber-400',
-    borderHover: 'hover:border-amber-500/50',
-    accentBg: 'bg-amber-500/10',
-    icon: SlidersHorizontal,
-    highlights: ['Auditable Impact Receipts', 'Tailpipe & Inhaled Dose Math', 'Empirical Assumptions Log'],
-  },
-];
-
 export function PillarCards() {
+  const t = useTranslations('pillars');
+
+  const pillars = [
+    {
+      id: 'know',
+      pillarNumber: t('know.number'),
+      title: t('know.title'),
+      tagline: t('know.tagline'),
+      description: t('know.description'),
+      href: '/live',
+      color: 'text-emerald-400',
+      borderHover: 'hover:border-emerald-500/50',
+      accentBg: 'bg-emerald-500/10',
+      icon: Activity,
+      highlights: [t('know.h1'), t('know.h2'), t('know.h3')],
+    },
+    {
+      id: 'predict',
+      pillarNumber: t('predict.number'),
+      title: t('predict.title'),
+      tagline: t('predict.tagline'),
+      description: t('predict.description'),
+      href: '/forecast',
+      color: 'text-teal-400',
+      borderHover: 'hover:border-teal-500/50',
+      accentBg: 'bg-teal-500/10',
+      icon: TrendingUp,
+      highlights: [t('predict.h1'), t('predict.h2'), t('predict.h3')],
+    },
+    {
+      id: 'protect',
+      pillarNumber: t('protect.number'),
+      title: t('protect.title'),
+      tagline: t('protect.tagline'),
+      description: t('protect.description'),
+      href: '/family',
+      color: 'text-sky-400',
+      borderHover: 'hover:border-sky-500/50',
+      accentBg: 'bg-sky-500/10',
+      icon: ShieldAlert,
+      highlights: [t('protect.h1'), t('protect.h2'), t('protect.h3')],
+    },
+    {
+      id: 'home',
+      pillarNumber: t('home.number'),
+      title: t('home.title'),
+      tagline: t('home.tagline'),
+      description: t('home.description'),
+      href: '/indoor',
+      color: 'text-indigo-400',
+      borderHover: 'hover:border-indigo-500/50',
+      accentBg: 'bg-indigo-500/10',
+      icon: Home,
+      highlights: [t('home.h1'), t('home.h2'), t('home.h3')],
+    },
+    {
+      id: 'act',
+      pillarNumber: t('act.number'),
+      title: t('act.title'),
+      tagline: t('act.tagline'),
+      description: t('act.description'),
+      href: '/what-if',
+      color: 'text-amber-400',
+      borderHover: 'hover:border-amber-500/50',
+      accentBg: 'bg-amber-500/10',
+      icon: SlidersHorizontal,
+      highlights: [t('act.h1'), t('act.h2'), t('act.h3')],
+    },
+  ];
+
   return (
     <section id="pillars" className="space-y-6 scroll-mt-20">
       <div className="text-center max-w-2xl mx-auto space-y-2">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 uppercase tracking-wider">
-          The Five Pillars
+          {t('sectionTag')}
         </span>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
-          How AeroSense AI Works
+          {t('sectionTitle')}
         </h2>
         <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-          Our own deterministic scientific engines execute all the mathematics. Every quantified recommendation produces an auditable Impact Receipt citing raw data, baseline, and scientific methods.
+          {t('sectionDesc')}
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        {PILLARS.map((p) => {
+        {pillars.map((p) => {
           const Icon = p.icon;
           return (
             <Link
@@ -175,7 +159,7 @@ export function PillarCards() {
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-mono uppercase tracking-wider text-purple-400">
-                AI Copilot
+                {t('copilot.tag')}
               </span>
               <div className="h-8 w-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Wind className="h-4 w-4" />
@@ -184,31 +168,31 @@ export function PillarCards() {
 
             <div>
               <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors flex items-center gap-1.5 font-display">
-                <span>Fact-Grounded AI Copilot</span>
+                <span>{t('copilot.title')}</span>
                 <ArrowUpRight className="h-4 w-4 opacity-0 -translate-x-1 translate-y-1 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 text-purple-400" />
               </h3>
               <h4 className="text-xs font-semibold text-purple-400 mt-0.5">
-                Gemini 2.5 Flash with Zero Number Fabrication
+                {t('copilot.tagline')}
               </h4>
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed">
-              Gemini plans and explains, but never invents science. Every answer is audited by a validator that rejects fabricated metrics and falls back to deterministic rules if unverified.
+              {t('copilot.description')}
             </p>
           </div>
 
           <div className="border-t border-purple-900/40 pt-4 mt-5 space-y-1.5">
             <div className="flex items-center gap-2 text-[11px] text-purple-200">
               <CheckCircle2 className="h-3 w-3 text-purple-400 shrink-0" />
-              <span>Cites Deterministic Fact IDs</span>
+              <span>{t('copilot.h1')}</span>
             </div>
             <div className="flex items-center gap-2 text-[11px] text-purple-200">
               <CheckCircle2 className="h-3 w-3 text-purple-400 shrink-0" />
-              <span>Prompt Injection Defense</span>
+              <span>{t('copilot.h2')}</span>
             </div>
             <div className="flex items-center gap-2 text-[11px] text-purple-200">
               <CheckCircle2 className="h-3 w-3 text-purple-400 shrink-0" />
-              <span>100% Offline Rule Fallback</span>
+              <span>{t('copilot.h3')}</span>
             </div>
           </div>
         </Link>

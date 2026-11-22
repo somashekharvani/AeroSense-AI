@@ -27,6 +27,7 @@ import { SourceBadge } from '@/components/ui/source-badge';
 
 export default function LandingHomePage() {
   const tCommon = useTranslations('common');
+  const tLanding = useTranslations('landing');
   const { location } = useLocation();
   const { data: snapshot } = useSnapshot();
 
@@ -49,19 +50,19 @@ export default function LandingHomePage() {
         <div className="text-center max-w-4xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-950/70 border border-emerald-700/60 px-3.5 py-1 text-xs font-semibold text-emerald-300">
             <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
-            <span>Deterministic Clean-Air Decision Engine</span>
+            <span>{tLanding('badge')}</span>
             {fused && <SourceBadge source={fused.dominantSource} />}
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.12]">
-            Breathe Smarter.{' '}
+            {tLanding('headline')}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-sky-400">
-              Live Healthier.
+              {tLanding('headlineHighlight')}
             </span>
           </h1>
 
           <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            AeroSense AI empowers families, schools, and communities across India to navigate severe winter smog and urban air pollution with deterministic low-emission routines, indoor air physics, and verifiable Impact Receipts.
+            {tLanding('description')}
           </p>
 
           {/* Dual Primary Call-to-Action Buttons */}
@@ -70,7 +71,7 @@ export default function LandingHomePage() {
               href="/overview"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm shadow-xl shadow-emerald-500/20 transition-all hover:gap-3"
             >
-              <span>Explore Live Air</span>
+              <span>{tLanding('exploreLive')}</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
 
@@ -81,7 +82,7 @@ export default function LandingHomePage() {
               className="border-slate-700 hover:border-slate-500 bg-slate-900/60 hover:bg-slate-800 text-slate-200 text-sm gap-2"
             >
               <Compass className="h-4 w-4 text-emerald-400" />
-              <span>Discover AeroSense AI</span>
+              <span>{tLanding('discoverApp')}</span>
             </Button>
           </div>
         </div>

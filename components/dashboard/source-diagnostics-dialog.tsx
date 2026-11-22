@@ -28,6 +28,7 @@ import { AQIBadge } from '@/components/ui/aqi-badge';
 import { SnapshotData } from '@/hooks/use-snapshot';
 import { formatLocaleDateTime } from '@/lib/utils';
 import { useLanguage } from '@/lib/i18n/context';
+import { useTranslations } from 'next-intl';
 
 export type DiagnosticSource = 'openMeteo' | 'cpcb' | 'waqi' | 'nasaFirms' | 'drone';
 
@@ -49,6 +50,7 @@ export function SourceDiagnosticsDialog({
   isRefreshing = false,
 }: SourceDiagnosticsDialogProps) {
   const { locale } = useLanguage();
+  const tDiag = useTranslations('diagnostics');
   const [activeTab, setActiveTab] = React.useState<string>(initialSource);
 
   // Sync tab when initialSource changes
@@ -76,11 +78,11 @@ export function SourceDiagnosticsDialog({
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-5 w-5 text-emerald-400" />
                 <h2 className="text-lg font-bold text-white tracking-wide">
-                  Environmental Data Source Diagnostics
+                  {tDiag('title')}
                 </h2>
               </div>
               <p className="text-xs text-slate-400">
-                Transparent verification of real-time feeds, deterministic calculation engines, and sensor telemetry.
+                {tDiag('subtitle')}
               </p>
             </div>
             {onRefresh && (
@@ -96,7 +98,7 @@ export function SourceDiagnosticsDialog({
                     isRefreshing ? 'animate-spin' : ''
                   }`}
                 />
-                Sync Feeds
+                {tDiag('syncFeeds')}
               </Button>
             )}
           </div>
@@ -111,35 +113,35 @@ export function SourceDiagnosticsDialog({
                 className="flex items-center justify-center gap-1.5 py-2 text-xs rounded-lg data-[state=active]:bg-emerald-950/80 data-[state=active]:text-emerald-300 data-[state=active]:border data-[state=active]:border-emerald-800/80"
               >
                 <Cpu className="h-3.5 w-3.5" />
-                <span>Open-Meteo</span>
+                <span>{tDiag('openMeteoName')}</span>
               </TabsTrigger>
               <TabsTrigger
                 value="cpcb"
                 className="flex items-center justify-center gap-1.5 py-2 text-xs rounded-lg data-[state=active]:bg-teal-950/80 data-[state=active]:text-teal-300 data-[state=active]:border data-[state=active]:border-teal-800/80"
               >
                 <Zap className="h-3.5 w-3.5" />
-                <span>CPCB Standard</span>
+                <span>{tDiag('cpcbName')}</span>
               </TabsTrigger>
               <TabsTrigger
                 value="waqi"
                 className="flex items-center justify-center gap-1.5 py-2 text-xs rounded-lg data-[state=active]:bg-cyan-950/80 data-[state=active]:text-cyan-300 data-[state=active]:border data-[state=active]:border-cyan-800/80"
               >
                 <Radio className="h-3.5 w-3.5" />
-                <span>WAQI Feed</span>
+                <span>{tDiag('waqiName')}</span>
               </TabsTrigger>
               <TabsTrigger
                 value="nasaFirms"
                 className="flex items-center justify-center gap-1.5 py-2 text-xs rounded-lg data-[state=active]:bg-indigo-950/80 data-[state=active]:text-indigo-300 data-[state=active]:border data-[state=active]:border-indigo-800/80"
               >
                 <Satellite className="h-3.5 w-3.5" />
-                <span>NASA FIRMS</span>
+                <span>{tDiag('nasaName')}</span>
               </TabsTrigger>
               <TabsTrigger
                 value="drone"
                 className="flex items-center justify-center gap-1.5 py-2 text-xs rounded-lg data-[state=active]:bg-slate-900/90 data-[state=active]:text-slate-200 data-[state=active]:border data-[state=active]:border-slate-700/80"
               >
                 <Navigation className="h-3.5 w-3.5" />
-                <span>AeroSense Drone</span>
+                <span>{tDiag('droneName')}</span>
               </TabsTrigger>
             </TabsList>
 

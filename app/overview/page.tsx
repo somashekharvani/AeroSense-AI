@@ -36,6 +36,7 @@ export default function OverviewDashboardPage() {
   const tNav = useTranslations('nav');
   const tCommon = useTranslations('common');
   const tAqi = useTranslations('aqi');
+  const tOverview = useTranslations('overview');
   const { location, openLocationDialog } = useLocation();
   const { data: snapshot, isLoading, error, isStale, refetch } = useSnapshot();
 
@@ -85,19 +86,19 @@ export default function OverviewDashboardPage() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-950/80 border border-emerald-700/60 px-3 py-1 text-xs font-semibold text-emerald-400">
               <Sparkles className="h-3.5 w-3.5" />
-              <span>Deterministic Environmental Engine Live</span>
+              <span>{tOverview('engineLive')}</span>
             </span>
             {fused && <SourceBadge source={fused.dominantSource} />}
             {isStale && (
               <span className="inline-flex items-center gap-1 rounded-full bg-amber-950/80 border border-amber-700/60 px-2.5 py-0.5 text-xs text-amber-300 font-medium">
-                Cached Stale
+                {tOverview('cachedStale')}
               </span>
             )}
           </div>
 
           <div className="space-y-1">
             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white font-display">
-              {tCommon('appName')} — Environmental Dashboard
+              {tCommon('appName')} — {tOverview('dashboardTitle')}
             </h1>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
               {tCommon('tagline')}
@@ -107,7 +108,7 @@ export default function OverviewDashboardPage() {
           {/* Location Action & Refresh */}
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Button variant="emerald" size="md" onClick={openLocationDialog}>
-              <span>Selected City: {location.name}</span>
+              <span>{tOverview('selectedCity', { name: location.name })}</span>
             </Button>
             <Button
               variant="outline"
@@ -146,7 +147,7 @@ export default function OverviewDashboardPage() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Activity className="h-5 w-5 text-emerald-400" />
-                <CardTitle className="text-base">Indian National AQI (CPCB)</CardTitle>
+                <CardTitle className="text-base">{tOverview('cpcbCardTitle')}</CardTitle>
               </div>
               {fused && (
                 <ConfidenceBadge
@@ -156,7 +157,7 @@ export default function OverviewDashboardPage() {
               )}
             </div>
             <CardDescription className="text-xs">
-              Computed strictly from CPCB October 2014 breakpoint interpolation.
+              {tOverview('cpcbCardDesc')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -170,13 +171,13 @@ export default function OverviewDashboardPage() {
                 <div className="flex items-baseline justify-between">
                   <div>
                     <span className="text-xs text-slate-400 block mb-1">
-                      CPCB Index • {location.name}
+                      {tOverview('cpcbIndex', { name: location.name })}
                     </span>
                     <AQIBadge aqi={aqiData.aqi} category={aqiData.category} size="lg" />
                   </div>
                   <div className="text-end">
                     <span className="text-xs text-slate-400 block mb-0.5">
-                      Dominant Pollutant
+                      {tAqi('dominantPollutant')}
                     </span>
                     <span className="text-lg font-bold font-mono text-white">
                       {aqiData.dominantPollutantName}
@@ -199,7 +200,7 @@ export default function OverviewDashboardPage() {
                 )}
               </div>
             ) : (
-              <div className="text-xs text-slate-400">Telemetry unavailable for this coordinate.</div>
+              <div className="text-xs text-slate-400">{tOverview('telemetryUnavailable')}</div>
             )}
           </CardContent>
         </Card>
@@ -210,7 +211,7 @@ export default function OverviewDashboardPage() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <TrendingDown className="h-5 w-5 text-teal-400" />
-                <CardTitle className="text-base">Atmospheric Inversion Risk</CardTitle>
+                <CardTitle className="text-base">{tOverview('inversionCardTitle')}</CardTitle>
               </div>
               {invData && (
                 <ConfidenceBadge
@@ -220,7 +221,7 @@ export default function OverviewDashboardPage() {
               )}
             </div>
             <CardDescription className="text-xs">
-              Physical risk score based on 925 hPa lapse rate and boundary-layer height.
+              {tOverview('inversionCardDesc')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -233,7 +234,7 @@ export default function OverviewDashboardPage() {
               <div className="space-y-4">
                 <div className="flex items-baseline justify-between">
                   <div>
-                    <span className="text-xs text-slate-400 block mb-1">Inversion Risk Score</span>
+                    <span className="text-xs text-slate-400 block mb-1">{tOverview('inversionScore')}</span>
                     <div className="flex items-baseline gap-2">
                       <span className="text-3xl font-extrabold font-mono text-white">
                         {invData.score}
@@ -254,7 +255,7 @@ export default function OverviewDashboardPage() {
                     </div>
                   </div>
                   <div className="text-end">
-                    <span className="text-xs text-slate-400 block mb-0.5">Boundary Layer</span>
+                    <span className="text-xs text-slate-400 block mb-0.5">{tOverview('boundaryLayer')}</span>
                     <span className="text-sm font-mono text-white">
                       {atmosphere ? `${Math.round(atmosphere.boundaryLayerHeightM)} m` : 'N/A'}
                     </span>

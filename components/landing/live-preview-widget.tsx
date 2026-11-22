@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { MapPin, Wind, Thermometer, Droplets, ArrowRight, RefreshCw } from 'lucide-react';
 import { useLocation } from '@/components/location/location-provider';
 import { useSnapshot } from '@/hooks/use-snapshot';
@@ -12,6 +13,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
 
 export function LivePreviewWidget() {
+  const tPreview = useTranslations('livePreview');
+  const tAqi = useTranslations('aqi');
   const { location, openLocationDialog } = useLocation();
   const { data: snapshot, isLoading, refetch } = useSnapshot();
 
@@ -35,11 +38,11 @@ export function LivePreviewWidget() {
                 onClick={openLocationDialog}
                 className="text-[11px] text-emerald-400 hover:text-emerald-300 font-medium underline underline-offset-2 transition-colors cursor-pointer"
               >
-                Change
+                {tPreview('change')}
               </button>
             </div>
             <p className="text-xs text-slate-400 font-mono">
-              {location.lat.toFixed(2)}°N, {location.lon.toFixed(2)}°E • CPCB Monitoring Region
+              {location.lat.toFixed(2)}°N, {location.lon.toFixed(2)}°E • {tPreview('cpcbRegion')}
             </p>
           </div>
         </div>
@@ -57,7 +60,7 @@ export function LivePreviewWidget() {
               <div className="flex items-center gap-2">
                 <AQIBadge aqi={aqi.aqi} category={aqi.category} size="sm" />
                 <div className="text-left">
-                  <span className="text-[10px] text-slate-400 block">Dominant</span>
+                  <span className="text-[10px] text-slate-400 block">{tAqi('dominantPollutant')}</span>
                   <span className="text-xs font-mono font-bold text-white">{aqi.dominantPollutantName}</span>
                 </div>
               </div>
@@ -65,15 +68,15 @@ export function LivePreviewWidget() {
               {/* Weather Stats */}
               {weather && (
                 <div className="hidden sm:flex items-center gap-4 text-xs font-mono text-slate-300 border-l border-slate-800 pl-4">
-                  <div className="flex items-center gap-1.5" title="Surface Temperature">
+                  <div className="flex items-center gap-1.5" title={tPreview('surfaceTemp')}>
                     <Thermometer className="h-3.5 w-3.5 text-amber-400" />
                     <span>{Math.round(weather.temperature2m)}°C</span>
                   </div>
-                  <div className="flex items-center gap-1.5" title="Wind Velocity">
+                  <div className="flex items-center gap-1.5" title={tPreview('windSpeed')}>
                     <Wind className="h-3.5 w-3.5 text-sky-400" />
                     <span>{Math.round(weather.windSpeedKmh)} km/h</span>
                   </div>
-                  <div className="flex items-center gap-1.5" title="Relative Humidity">
+                  <div className="flex items-center gap-1.5" title={tPreview('humidity')}>
                     <Droplets className="h-3.5 w-3.5 text-teal-400" />
                     <span>{Math.round(weather.humidityPct)}%</span>
                   </div>
@@ -88,7 +91,7 @@ export function LivePreviewWidget() {
               )}
             </>
           ) : (
-            <span className="text-xs text-slate-400">Telemetry sync pending...</span>
+            <span className="text-xs text-slate-400">{tPreview('telemetryPending')}</span>
           )}
 
           {/* Action CTA to Live Page */}
@@ -96,7 +99,7 @@ export function LivePreviewWidget() {
             href="/live"
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-xs font-semibold text-emerald-300 transition-all ml-auto md:ml-0"
           >
-            <span>Full Live Air</span>
+            <span>{tPreview('fullLiveAir')}</span>
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>

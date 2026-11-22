@@ -2,9 +2,12 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Wind, Shield, Database, ExternalLink, Heart } from 'lucide-react';
 
 export function LandingFooter() {
+  const t = useTranslations('footer');
+
   return (
     <footer className="border-t border-slate-800/80 bg-[#04070b] text-slate-400 text-xs py-10 px-4 sm:px-6 lg:px-8 mt-12">
       <div className="max-w-7xl mx-auto space-y-8">
@@ -18,52 +21,52 @@ export function LandingFooter() {
               <span className="text-base font-extrabold text-white font-display">AeroSense AI</span>
             </div>
             <p className="text-xs text-slate-300 font-medium">
-              Know the air. Predict the risk. Protect your family. Prove the impact.
+              {t('tagline')}
             </p>
             <p className="text-[11px] text-slate-400 leading-relaxed max-w-md">
-              Clean-Air Decision Engine engineered for PromptWars Challenge 6. All science is executed by pure deterministic mathematical engines; Gemini plans and explains; every quantified recommendation displays an auditable Impact Receipt.
+              {t('mission')}
             </p>
           </div>
 
           {/* Col 2: Navigation Links */}
           <div className="space-y-2">
             <span className="text-xs font-bold text-white uppercase tracking-wider block mb-2 font-display">
-              Core Intelligence
+              {t('coreIntelligence')}
             </span>
             <ul className="space-y-1.5 text-xs">
               <li>
                 <Link href="/overview" className="hover:text-emerald-400 transition-colors">
-                  Telemetry Dashboard
+                  {t('telemetryDashboard')}
                 </Link>
               </li>
               <li>
                 <Link href="/live" className="hover:text-emerald-400 transition-colors">
-                  Pillar 1: Live Indian AQI
+                  {t('pillar1')}
                 </Link>
               </li>
               <li>
                 <Link href="/forecast" className="hover:text-teal-400 transition-colors">
-                  Pillar 2: 48h Outlook & Inversion
+                  {t('pillar2')}
                 </Link>
               </li>
               <li>
                 <Link href="/family" className="hover:text-sky-400 transition-colors">
-                  Pillar 3: Family Exposure Budgets
+                  {t('pillar3')}
                 </Link>
               </li>
               <li>
                 <Link href="/indoor" className="hover:text-indigo-400 transition-colors">
-                  Pillar 4: Indoor Mass-Balance
+                  {t('pillar4')}
                 </Link>
               </li>
               <li>
                 <Link href="/what-if" className="hover:text-amber-400 transition-colors">
-                  Pillar 5: What-If Simulator
+                  {t('pillar5')}
                 </Link>
               </li>
               <li>
                 <Link href="/drone" className="hover:text-cyan-400 transition-colors">
-                  AeroSense Drone Lab
+                  {t('droneLab')}
                 </Link>
               </li>
             </ul>
@@ -72,7 +75,7 @@ export function LandingFooter() {
           {/* Col 3: Data Sources & Provenance */}
           <div className="space-y-2">
             <span className="text-xs font-bold text-white uppercase tracking-wider block mb-2 font-display">
-              Scientific Sources
+              {t('scientificSources')}
             </span>
             <ul className="space-y-1.5 text-xs">
               <li>
@@ -82,7 +85,7 @@ export function LandingFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 hover:text-white transition-colors"
                 >
-                  <span>Open-Meteo Weather & CAMS</span>
+                  <span>{t('openMeteoSource')}</span>
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </li>
@@ -93,7 +96,7 @@ export function LandingFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 hover:text-white transition-colors"
                 >
-                  <span>WAQI CPCB Ground Feeds</span>
+                  <span>{t('waqiSource')}</span>
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </li>
@@ -104,15 +107,15 @@ export function LandingFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 hover:text-white transition-colors"
                 >
-                  <span>NASA FIRMS VIIRS NRT</span>
+                  <span>{t('nasaSource')}</span>
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </li>
               <li>
-                <span className="text-slate-500">CPCB NAQI Oct 2014 Standard</span>
+                <span className="text-slate-500">{t('cpcbStandard')}</span>
               </li>
               <li>
-                <span className="text-slate-500">US EPA Exposure Factors (2011)</span>
+                <span className="text-slate-500">{t('epaStandard')}</span>
               </li>
             </ul>
           </div>
@@ -121,14 +124,14 @@ export function LandingFooter() {
         {/* Legal & Health Disclaimers */}
         <div className="border-t border-slate-800/60 pt-6 space-y-2 text-[11px] text-slate-500 leading-relaxed">
           <p>
-            <strong className="text-slate-400">Health Notice:</strong> Health and exposure estimates generated by AeroSense AI are strictly for environmental guidance, routine planning, and awareness. They do not constitute clinical diagnosis, medical triage, or personal health prescriptions. Consult certified healthcare professionals for medical conditions.
+            <strong className="text-slate-400">{t('healthNoticeLabel')}</strong> {t('healthNoticeText')}
           </p>
           <p>
-            <strong className="text-slate-400">Privacy Assurance:</strong> Family profiles, sensitivities, and bookmarked places are persisted exclusively in your browser&apos;s local IndexedDB and are never transmitted to external servers. All outgoing Gemini AI calls are automatically scrubbed of personal identifiers.
+            <strong className="text-slate-400">{t('privacyAssuranceLabel')}</strong> {t('privacyAssuranceText')}
           </p>
           <div className="pt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between text-[11px] text-slate-600 gap-2">
-            <span>© 2026 AeroSense AI • PromptWars Challenge 6</span>
-            <span>Deterministic Environmental Intelligence Platform</span>
+            <span>{t('copyright')}</span>
+            <span>{t('subCopyright')}</span>
           </div>
         </div>
       </div>

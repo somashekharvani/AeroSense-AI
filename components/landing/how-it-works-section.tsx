@@ -1,43 +1,42 @@
 'use client';
 
 import * as React from 'react';
+import { useTranslations } from 'next-intl';
 import { Database, Cpu, ShieldCheck, Sparkles, FileCheck, ArrowRight } from 'lucide-react';
 
 export function HowItWorksSection() {
+  const t = useTranslations('howItWorks');
+
   const steps = [
     {
-      step: '01',
-      title: 'Multi-Source Telemetry Ingestion',
-      subtitle: 'Open-Meteo • WAQI CPCB • NASA FIRMS • Drone',
-      description:
-        'Continuous raw data acquisition from numerical atmospheric models, ground-level CPCB monitoring stations, and NASA VIIRS satellite thermal detections.',
+      step: t('step1.num'),
+      title: t('step1.title'),
+      subtitle: t('step1.subtitle'),
+      description: t('step1.desc'),
       icon: Database,
       accent: 'border-emerald-500/30 text-emerald-400 bg-emerald-500/10',
     },
     {
-      step: '02',
-      title: 'Deterministic Scientific Engines',
-      subtitle: 'Pure Mathematical Models with Zero LLM Call',
-      description:
-        'All science is computed deterministically: official CPCB linear interpolation, 925 hPa vertical lapse rates, EPA exposure doses, and indoor mass-balance ODEs.',
+      step: t('step2.num'),
+      title: t('step2.title'),
+      subtitle: t('step2.subtitle'),
+      description: t('step2.desc'),
       icon: Cpu,
       accent: 'border-teal-500/30 text-teal-400 bg-teal-500/10',
     },
     {
-      step: '03',
-      title: 'Auditable Facts Object Assembly',
-      subtitle: 'FACT-AQI-VALUE • FACT-INV-SCORE • FACT-EXP',
-      description:
-        'Engine outputs are compiled into a strictly typed Facts Object with permanent citation IDs. Numbers not present in this registry can never be cited.',
+      step: t('step3.num'),
+      title: t('step3.title'),
+      subtitle: t('step3.subtitle'),
+      description: t('step3.desc'),
       icon: FileCheck,
       accent: 'border-sky-500/30 text-sky-400 bg-sky-500/10',
     },
     {
-      step: '04',
-      title: 'Zero-Fabrication Explainable AI',
-      subtitle: 'Gemini 2.5 Flash + Audited Impact Receipts',
-      description:
-        'Gemini plans and explains recommendations while a strict validator rejects hallucinated figures. Every claim outputs an auditable Impact Receipt.',
+      step: t('step4.num'),
+      title: t('step4.title'),
+      subtitle: t('step4.subtitle'),
+      description: t('step4.desc'),
       icon: ShieldCheck,
       accent: 'border-purple-500/30 text-purple-400 bg-purple-500/10',
     },
@@ -47,13 +46,13 @@ export function HowItWorksSection() {
     <section className="space-y-6">
       <div className="text-center max-w-2xl mx-auto space-y-2">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-semibold text-teal-400 uppercase tracking-wider">
-          Architecture & Integrity
+          {t('sectionTag')}
         </span>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
-          Science Done Deterministically. AI for Explanation.
+          {t('sectionTitle')}
         </h2>
         <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-          Unlike ordinary AI chat applications that hallucinate health figures, AeroSense AI enforces a strict boundary: our mathematical engines calculate the physics, while Gemini only explains the verified results.
+          {t('sectionDesc')}
         </p>
       </div>
 
