@@ -198,6 +198,37 @@ export default function WhatIfSimulatorPage() {
             </div>
           </div>
 
+          {/* Scientific Distinction Callout */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 p-3 rounded-lg bg-slate-950/70 border border-slate-800 text-xs">
+            <div className="p-2.5 rounded bg-slate-900/50 border border-slate-800/60">
+              <span className="text-[10px] text-slate-400 uppercase font-mono block">Reduction in Source Emissions</span>
+              <span className="font-bold text-amber-400 text-sm">
+                {cleanFuel === 'lpg' ? '92%' : '97%'} reduction
+              </span>
+              <span className="text-[10px] text-slate-500 block mt-0.5">
+                Direct stove generation rate
+              </span>
+            </div>
+            <div className="p-2.5 rounded bg-slate-900/50 border border-slate-800/60">
+              <span className="text-[10px] text-slate-400 uppercase font-mono block">Estimated Particle Mass Avoided</span>
+              <span className="font-bold text-emerald-400 text-sm">
+                -{Math.round(((cleanFuel === 'lpg' ? 45000 - 3500 : 45000 - 1200) * cookingHours) / 1000)} mg/day
+              </span>
+              <span className="text-[10px] text-slate-500 block mt-0.5">
+                Avoided over {cookingHours}h cooking
+              </span>
+            </div>
+            <div className="p-2.5 rounded bg-slate-900/50 border border-slate-800/60">
+              <span className="text-[10px] text-slate-400 uppercase font-mono block">Modelled Room Concentration</span>
+              <span className="font-bold text-teal-300 text-sm">
+                -{Math.round((cleanFuel === 'lpg' ? 45000 - 3500 : 45000 - 1200) / (50 * 0.98))} µg/m³
+              </span>
+              <span className="text-[10px] text-slate-500 block mt-0.5">
+                In 50m³ room (a=0.8/h, k=0.18/h)
+              </span>
+            </div>
+          </div>
+
           <ImpactReceiptCard receipt={cookingReceipt} defaultExpanded={true} />
         </CardContent>
       </Card>

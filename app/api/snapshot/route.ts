@@ -119,6 +119,17 @@ export async function GET(request: NextRequest) {
         lastUpdated: openMeteoRes.fetchedAt,
         error: openMeteoRes.error,
       },
+      cpcb: {
+        status: 'active' as const,
+        label: 'CPCB National Air Quality Standard Engine',
+        methodology: 'Central Pollution Control Board (October 2014) Breakpoint Interpolation',
+        dominantPollutant: indianAqi.dominantPollutant,
+        aqi: indianAqi.aqi,
+        category: indianAqi.category,
+        subIndicesCount: Object.keys(indianAqi.subIndices).length,
+        hasSufficientData: !indianAqi.isPartial,
+        lastUpdated: new Date().toISOString(),
+      },
       waqi: {
         status: waqiRes.ok
           ? ('online' as const)

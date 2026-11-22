@@ -131,7 +131,12 @@ export default function OverviewDashboardPage() {
       </div>
 
       {/* Provider Ingestion Status Strip */}
-      <SourceStatusStrip status={snapshot?.sourceStatus} />
+      <SourceStatusStrip
+        status={snapshot?.sourceStatus}
+        snapshot={snapshot}
+        onRefresh={refetch}
+        isRefreshing={isLoading}
+      />
 
       {/* Primary Telemetry Cards: Live Indian AQI & Inversion Risk */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

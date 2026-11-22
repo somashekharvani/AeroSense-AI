@@ -1,117 +1,201 @@
 'use client';
 
 import * as React from 'react';
-import { Cpu, Radio, Satellite, Navigation, Clock, CheckCircle2, AlertCircle } from 'lucide-react';
+import {
+  Cpu,
+  Radio,
+  Satellite,
+  Navigation,
+  Zap,
+  Info,
+} from 'lucide-react';
 import { SnapshotData } from '@/hooks/use-snapshot';
 import { formatLocaleDateTime } from '@/lib/utils';
 import { useLanguage } from '@/lib/i18n/context';
 import { cn } from '@/lib/utils';
+import {
+  SourceDiagnosticsDialog,
+  type DiagnosticSource,
+} from './source-diagnostics-dialog';
 
 export function SourceStatusStrip({
   status,
+  snapshot,
   className,
+  onRefresh,
+  isRefreshing,
 }: {
   status?: SnapshotData['sourceStatus'];
+  snapshot?: SnapshotData | null;
   className?: string;
+  onRefresh?: () => void;
+  isRefreshing?: boolean;
 }) {
   const { locale } = useLanguage();
+  const [dialogOpen, setDialogOpen] = React.useState(false);
+  const [selectedSource, setSelectedSource] = React.useState<DiagnosticSource>('openMeteo');
 
   if (!status) return null;
 
-  const items = [
+  const handleCardClick = (sourceId: DiagnosticSource) => {
+    setSelectedSource(sourceId);
+    setDialogOpen(true);
+  };
+
+  const items: Array<{
+    id: DiagnosticSource;
+    name: string;
+    subtext: string;
+    icon: React.ElementType;
+    status: string;
+    detail: string;
+    statusClass: string;
+    dotColor: string;
+  }> = [
     {
       id: 'openMeteo',
       name: 'Open-Meteo',
+      subtext: 'Weather & CAMS',
       icon: Cpu,
-      status: status.openMeteo.status,
-      detail: status.openMeteo.lastUpdated
+      status: status.openMeteo?.status || 'online',
+      detail: status.openMeteo?.lastUpdated
         ? formatLocaleDateTime(status.openMeteo.lastUpdated, locale, {
             hour: '2-digit',
             minute: '2-digit',
           })
-        : 'Active',
+        : 'Active Grid',
       statusClass:
-        status.openMeteo.status === 'online'
-          ? 'text-emerald-400 bg-emerald-950/60 border-emerald-800/60'
-          : 'text-red-400 bg-red-950/60 border-red-800/60',
+        status.openMeteo?.status === 'online'
+          ? 'text-emerald-400 bg-emerald-950/40 border-emerald-800/60 hover:bg-emerald-950/70 hover:border-emerald-600'
+          : 'text-red-400 bg-red-950/40 border-red-800/60 hover:bg-red-950/70',
+      dotColor: status.openMeteo?.status === 'online' ? 'bg-emerald-400' : 'bg-red-400',
+    },
+    {
+      id: 'cpcb',
+      name: 'CPCB Standard',
+      subtext: 'Oct 2014 Formula',
+      icon: Zap,
+      status: 'active',
+      detail: status.cpcb?.dominantPollutant
+        ? `Dom: ${status.cpcb.dominantPollutant}`
+        : 'Deterministic Engine',
+      statusClass:
+        'text-teal-300 bg-teal-950/40 border-teal-800/60 hover:bg-teal-950/70 hover:border-teal-500',
+      dotColor: 'bg-teal-400',
     },
     {
       id: 'waqi',
-      name: 'CPCB WAQI',
+      name: 'WAQI Feed',
+      subtext: 'Ground Stations',
       icon: Radio,
-      status: status.waqi.status,
+      status: status.waqi?.status || 'unconfigured',
       detail:
-        status.waqi.status === 'online'
+        status.waqi?.status === 'online'
           ? status.waqi.stationName || 'Online'
-          : status.waqi.status === 'unconfigured'
+          : status.waqi?.status === 'unconfigured'
           ? 'Token Pending'
           : 'Offline',
       statusClass:
-        status.waqi.status === 'online'
-          ? 'text-teal-400 bg-teal-950/60 border-teal-800/60'
-          : 'text-amber-400 bg-amber-950/60 border-amber-800/60',
+        status.waqi?.status === 'online'
+          ? 'text-cyan-400 bg-cyan-950/40 border-cyan-800/60 hover:bg-cyan-950/70 hover:border-cyan-500'
+          : 'text-amber-400 bg-amber-950/40 border-amber-800/60 hover:bg-amber-950/70 hover:border-amber-600',
+      dotColor: status.waqi?.status === 'online' ? 'bg-cyan-400' : 'bg-amber-400',
     },
     {
       id: 'nasaFirms',
       name: 'NASA FIRMS',
+      subtext: 'VIIRS Hotspots',
       icon: Satellite,
-      status: status.nasaFirms.status,
+      status: status.nasaFirms?.status || 'unconfigured',
       detail:
-        status.nasaFirms.status === 'online'
+        status.nasaFirms?.status === 'online'
           ? `${status.nasaFirms.firePointsCount} points`
-          : status.nasaFirms.status === 'unconfigured'
+          : status.nasaFirms?.status === 'unconfigured'
           ? 'Key Pending'
           : 'Offline',
       statusClass:
-        status.nasaFirms.status === 'online'
-          ? 'text-indigo-400 bg-indigo-950/60 border-indigo-800/60'
-          : 'text-amber-400 bg-amber-950/60 border-amber-800/60',
+        status.nasaFirms?.status === 'online'
+          ? 'text-indigo-400 bg-indigo-950/40 border-indigo-800/60 hover:bg-indigo-950/70 hover:border-indigo-500'
+          : 'text-amber-400 bg-amber-950/40 border-amber-800/60 hover:bg-amber-950/70 hover:border-amber-600',
+      dotColor: status.nasaFirms?.status === 'online' ? 'bg-indigo-400' : 'bg-amber-400',
     },
     {
       id: 'drone',
       name: 'AeroSense Drone',
+      subtext: 'Hardware Telemetry',
       icon: Navigation,
       status: 'not_connected',
       detail: 'Not Connected',
-      statusClass: 'text-slate-400 bg-slate-900/60 border-slate-700/60',
+      statusClass:
+        'text-slate-400 bg-slate-900/40 border-slate-700/60 hover:bg-slate-900/70 hover:border-slate-500',
+      dotColor: 'bg-slate-500',
     },
   ];
 
   return (
-    <div
-      className={cn(
-        'grid grid-cols-2 sm:grid-cols-4 gap-2.5 p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-xs',
-        className
-      )}
-      aria-label="Provider ingestion status strip"
-    >
-      {items.map((item) => {
-        const Icon = item.icon;
-        const isOnline = item.status === 'online';
+    <>
+      <div className={cn('space-y-1.5', className)}>
+        <div className="flex items-center justify-between px-1">
+          <span className="text-[11px] font-medium text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Live Provider Telemetry & Ingestion Feeds
+          </span>
+          <span className="text-[10px] text-slate-500 flex items-center gap-1">
+            <Info className="h-3 w-3" />
+            Click card for diagnostics
+          </span>
+        </div>
 
-        return (
-          <div
-            key={item.id}
-            className={cn(
-              'flex items-center gap-2 rounded-lg border px-2.5 py-2 transition-colors',
-              item.statusClass
-            )}
-          >
-            <Icon className="h-4 w-4 shrink-0" />
-            <div className="flex flex-col min-w-0">
-              <div className="flex items-center gap-1">
-                <span className="font-semibold text-white truncate text-[11px]">{item.name}</span>
-                {isOnline ? (
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-                ) : (
-                  <span className="h-1.5 w-1.5 rounded-full bg-amber-400 shrink-0" />
+        <div
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 p-2 rounded-xl bg-slate-950/80 border border-slate-800/80"
+          aria-label="Provider ingestion status strip"
+        >
+          {items.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => handleCardClick(item.id)}
+                className={cn(
+                  'flex items-center gap-2.5 rounded-lg border p-2.5 text-left transition-all duration-200 cursor-pointer shadow-sm group focus:outline-none focus:ring-1 focus:ring-emerald-500/50',
+                  item.statusClass
                 )}
-              </div>
-              <span className="text-[10px] text-slate-400 truncate">{item.detail}</span>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+                aria-label={`View diagnostics for ${item.name}`}
+              >
+                <div className="p-1.5 rounded-md bg-black/40 shrink-0 group-hover:scale-105 transition-transform">
+                  <Icon className="h-4 w-4" />
+                </div>
+                <div className="flex flex-col min-w-0 flex-1">
+                  <div className="flex items-center justify-between gap-1">
+                    <span className="font-semibold text-white truncate text-[11px] group-hover:text-emerald-300 transition-colors">
+                      {item.name}
+                    </span>
+                    <span
+                      className={cn(
+                        'h-1.5 w-1.5 rounded-full shrink-0 shadow-sm',
+                        item.dotColor
+                      )}
+                    />
+                  </div>
+                  <span className="text-[10px] text-slate-400 truncate">{item.detail}</span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Diagnostics Drawer / Modal */}
+      <SourceDiagnosticsDialog
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        initialSource={selectedSource}
+        snapshot={snapshot}
+        onRefresh={onRefresh}
+        isRefreshing={isRefreshing}
+      />
+    </>
   );
 }

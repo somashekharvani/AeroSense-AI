@@ -138,11 +138,21 @@ export function calculateCookingImpact(input: CookingScenarioInput): ImpactRecei
   };
 
   const hours = Math.max(0.5, input.cookingHoursPerDay);
-  const baselineEmission = emissionMap[input.baselineFuel] * hours;
-  const altEmission = emissionMap[input.alternativeFuel] * hours;
+  const vol = Math.max(10, input.roomVolumeM3 || 50);
+  const a = SCIENTIFIC_ASSUMPTIONS.indoorPhysics.airExchangeRate.normal.value; // 0.8 /h
+  const k = SCIENTIFIC_ASSUMPTIONS.indoorPhysics.depositionRateK.value; // 0.18 /h
+  const totalLoss = a + k; // 0.98 /h
+
+  const baseRateUgH = emissionMap[input.baselineFuel];
+  const altRateUgH = emissionMap[input.alternativeFuel];
+  const baselineEmission = baseRateUgH * hours;
+  const altEmission = altRateUgH * hours;
   const savedEmissionUg = baselineEmission - altEmission;
+  const savedMassMg = Math.round(savedEmissionUg / 1000);
   const pctReduction =
     baselineEmission > 0 ? Math.round((savedEmissionUg / baselineEmission) * 100) : 0;
+  // Modelled steady-state indoor concentration delta during cooking
+  const deltaConcUgM3 = Math.round((baseRateUgH - altRateUgH) / (vol * totalLoss));
 
   const names: Record<CookingFuelChoice, string> = {
     biomass: 'Traditional Biomass/Chulha',
@@ -154,19 +164,20 @@ export function calculateCookingImpact(input: CookingScenarioInput): ImpactRecei
     id: `IMP-CKG-${input.baselineFuel}-vs-${input.alternativeFuel}`,
     recommendation: `Transition from ${names[input.baselineFuel]} to ${names[input.alternativeFuel]}`,
     action: `Cook with ${names[input.alternativeFuel]}`,
-    baseline: `${names[input.baselineFuel]} (${hours}h/day in ${input.roomVolumeM3}m³ space)`,
-    alternative: `${names[input.alternativeFuel]} (${hours}h/day in ${input.roomVolumeM3}m³ space)`,
+    baseline: `${names[input.baselineFuel]} (${hours}h/day in ${vol}m³ space)`,
+    alternative: `${names[input.alternativeFuel]} (${hours}h/day in ${vol}m³ space)`,
     change: {
       value: Math.abs(pctReduction),
-      unit: `% indoor cooking particulate source reduction (-${Math.round(
-        savedEmissionUg / 1000
-      )} mg PM2.5/day)`,
+      unit: `% reduction in source emissions (-${savedMassMg} mg PM2.5/day emitted)`,
       direction: savedEmissionUg >= 0 ? 'reduction' : 'increase',
     },
-    method: 'Source_Mass = Emission_Rate × Operating_Duration',
+    method:
+      'Source_Mass = Emission_Rate × Operating_Duration; ΔC_indoor = (S_base - S_alt) / [V × (a + k)]',
     assumptions: [
-      `${names[input.baselineFuel]} emission rate: ${emissionMap[input.baselineFuel]} µg/h`,
-      `${names[input.alternativeFuel]} emission rate: ${emissionMap[input.alternativeFuel]} µg/h`,
+      `Reduction in source emissions: ${pctReduction}% (${baseRateUgH.toLocaleString()} µg/h → ${altRateUgH.toLocaleString()} µg/h)`,
+      `Estimated particle mass emitted avoided: -${savedMassMg} mg PM2.5/day over ${hours}h cooking`,
+      `Modelled indoor room concentration reduction: -${deltaConcUgM3} µg/m³ peak steady-state impact in ${vol} m³ space (a=${a}/h, k=${k}/h)`,
+      'Distinction: Source emission rate measures stove particulate output; modelled room concentration accounts for room volume, infiltration exchange, and wall deposition.',
       'Smith et al. Global Burden of Disease household solid fuel emission factors',
     ],
     dataUsed: [

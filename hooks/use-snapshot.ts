@@ -44,6 +44,18 @@ export interface SnapshotData {
       status: 'online' | 'offline';
       label: string;
       lastUpdated: string;
+      error?: string;
+    };
+    cpcb: {
+      status: 'active' | 'calibrating';
+      label: string;
+      methodology: string;
+      dominantPollutant?: string | null;
+      aqi: number;
+      category: string;
+      subIndicesCount: number;
+      hasSufficientData: boolean;
+      lastUpdated: string;
     };
     waqi: {
       status: 'online' | 'offline' | 'unconfigured';

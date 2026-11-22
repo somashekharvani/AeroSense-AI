@@ -72,7 +72,12 @@ export default function LiveAirPage() {
       </div>
 
       {/* Source Status Strip */}
-      <SourceStatusStrip status={snapshot?.sourceStatus} />
+      <SourceStatusStrip
+        status={snapshot?.sourceStatus}
+        snapshot={snapshot}
+        onRefresh={refetch}
+        isRefreshing={isLoading}
+      />
 
       {/* Primary AQI & Meteorological Summary */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
