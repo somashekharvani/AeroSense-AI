@@ -85,6 +85,12 @@ export default function IndoorAirPage() {
         indoorPm25={Math.round(indoorResult.steadyStateConcentrationUgM3)}
         roomVolumeM3={roomVolumeM3}
         initialCadrM3h={cadrM3h}
+        windowOpen={windowsOpen}
+        onWindowOpenChange={setWindowsOpen}
+        cadrM3h={cadrM3h}
+        onCadrChange={setCadrM3h}
+        cookingActive={hasCooking}
+        onCookingChange={setHasCooking}
       />
 
       {/* Ventilate-or-Seal Decision Card */}
