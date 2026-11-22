@@ -21,6 +21,7 @@ export function CanvasContainer({
   const [hasWebGL, setHasWebGL] = useState<boolean>(true);
   const [viewMode, setViewMode] = useState<'3d' | '2d'>('3d');
   const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(false);
+  const [graphicsQuality, setGraphicsQuality] = useState<'high' | 'medium' | 'low'>('high');
 
   useEffect(() => {
     // 1. Check WebGL support
@@ -65,36 +66,51 @@ export function CanvasContainer({
           )}
         </div>
 
-        {/* View mode toggle */}
-        <div className="flex items-center gap-1 bg-background/80 p-0.5 rounded-lg border border-border/60 text-xs">
-          <button
-            type="button"
-            disabled={!hasWebGL}
-            onClick={() => setViewMode('3d')}
-            className={`px-2.5 py-1 rounded-md transition-all font-medium flex items-center gap-1.5 ${
-              viewMode === '3d'
-                ? 'bg-emerald-600 text-white shadow-sm'
-                : 'text-muted-foreground hover:text-foreground disabled:opacity-40'
-            }`}
-            aria-pressed={viewMode === '3d'}
-          >
-            <Sliders className="w-3.5 h-3.5" />
-            <span>3D View</span>
-          </button>
+        {/* View mode & Quality presets */}
+        <div className="flex items-center gap-2">
+          {viewMode === '3d' && (
+            <select
+              value={graphicsQuality}
+              onChange={(e) => setGraphicsQuality(e.target.value as any)}
+              className="hidden sm:block bg-background/80 text-foreground px-2 py-1 rounded-lg border border-border/60 text-[11px] focus:ring-1 focus:ring-emerald-500 cursor-pointer"
+              aria-label="3D Graphics Quality Preset"
+            >
+              <option value="high">High (Full Shadows)</option>
+              <option value="medium">Medium (Balanced)</option>
+              <option value="low">Low (Battery Saver)</option>
+            </select>
+          )}
 
-          <button
-            type="button"
-            onClick={() => setViewMode('2d')}
-            className={`px-2.5 py-1 rounded-md transition-all font-medium flex items-center gap-1.5 ${
-              viewMode === '2d'
-                ? 'bg-emerald-600 text-white shadow-sm'
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-            aria-pressed={viewMode === '2d'}
-          >
-            <Eye className="w-3.5 h-3.5" />
-            <span>2D Accessible</span>
-          </button>
+          <div className="flex items-center gap-1 bg-background/80 p-0.5 rounded-lg border border-border/60 text-xs">
+            <button
+              type="button"
+              disabled={!hasWebGL}
+              onClick={() => setViewMode('3d')}
+              className={`px-2.5 py-1 rounded-md transition-all font-medium flex items-center gap-1.5 cursor-pointer ${
+                viewMode === '3d'
+                  ? 'bg-emerald-600 text-white shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground disabled:opacity-40'
+              }`}
+              aria-pressed={viewMode === '3d'}
+            >
+              <Sliders className="w-3.5 h-3.5" />
+              <span>3D View</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setViewMode('2d')}
+              className={`px-2.5 py-1 rounded-md transition-all font-medium flex items-center gap-1.5 cursor-pointer ${
+                viewMode === '2d'
+                  ? 'bg-emerald-600 text-white shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+              aria-pressed={viewMode === '2d'}
+            >
+              <Eye className="w-3.5 h-3.5" />
+              <span>2D Accessible</span>
+            </button>
+          </div>
         </div>
       </div>
 
