@@ -22,7 +22,10 @@ export interface LocaleInfo {
   englishName: string;
   direction: 'ltr' | 'rtl';
   script: string;
+  status: 'active' | 'coming_soon';
 }
+
+export const PRIMARY_LOCALES: Locale[] = ['en', 'kn', 'hi'];
 
 export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
   en: {
@@ -31,6 +34,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'English',
     direction: 'ltr',
     script: 'Latin',
+    status: 'active',
   },
   hi: {
     code: 'hi',
@@ -38,6 +42,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'Hindi',
     direction: 'ltr',
     script: 'Devanagari',
+    status: 'active',
   },
   kn: {
     code: 'kn',
@@ -45,6 +50,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'Kannada',
     direction: 'ltr',
     script: 'Kannada',
+    status: 'active',
   },
   ta: {
     code: 'ta',
@@ -52,6 +58,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'Tamil',
     direction: 'ltr',
     script: 'Tamil',
+    status: 'coming_soon',
   },
   te: {
     code: 'te',
@@ -59,6 +66,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'Telugu',
     direction: 'ltr',
     script: 'Telugu',
+    status: 'coming_soon',
   },
   ml: {
     code: 'ml',
@@ -66,6 +74,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'Malayalam',
     direction: 'ltr',
     script: 'Malayalam',
+    status: 'coming_soon',
   },
   mr: {
     code: 'mr',
@@ -73,6 +82,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'Marathi',
     direction: 'ltr',
     script: 'Devanagari',
+    status: 'coming_soon',
   },
   bn: {
     code: 'bn',
@@ -80,6 +90,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'Bengali',
     direction: 'ltr',
     script: 'Bengali',
+    status: 'coming_soon',
   },
   gu: {
     code: 'gu',
@@ -87,6 +98,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'Gujarati',
     direction: 'ltr',
     script: 'Gujarati',
+    status: 'coming_soon',
   },
   pa: {
     code: 'pa',
@@ -94,6 +106,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'Punjabi',
     direction: 'ltr',
     script: 'Gurmukhi',
+    status: 'coming_soon',
   },
   ur: {
     code: 'ur',
@@ -101,6 +114,7 @@ export const LOCALES_INFO: Record<Locale, LocaleInfo> = {
     englishName: 'Urdu',
     direction: 'rtl',
     script: 'Arabic',
+    status: 'coming_soon',
   },
 };
 

@@ -41,12 +41,13 @@ export function LanguageSwitcher({ className }: { className?: string }) {
         <div
           role="menu"
           aria-orientation="vertical"
-          className="absolute end-0 mt-2 w-48 rounded-xl border border-slate-700/80 bg-[#0c131a] p-1.5 shadow-2xl z-50 animate-in fade-in-50 zoom-in-95 duration-100 max-h-80 overflow-y-auto"
+          className="absolute end-0 mt-2 w-56 rounded-xl border border-slate-700/80 bg-[#0c131a] p-1.5 shadow-2xl z-50 animate-in fade-in-50 zoom-in-95 duration-100 max-h-96 overflow-y-auto"
         >
-          <div className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-500 border-b border-white/5 mb-1">
-            Select Language (11)
+          <div className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-400 border-b border-emerald-900/40 mb-1 flex items-center justify-between">
+            <span>Primary Languages</span>
+            <span className="text-[9px] text-emerald-500 font-mono">100% Native</span>
           </div>
-          {SUPPORTED_LOCALES.map((code) => {
+          {SUPPORTED_LOCALES.filter((code) => LOCALES_INFO[code].status === 'active').map((code) => {
             const info = LOCALES_INFO[code];
             const isSelected = locale === code;
             return (
@@ -58,17 +59,50 @@ export function LanguageSwitcher({ className }: { className?: string }) {
                   setIsOpen(false);
                 }}
                 className={cn(
-                  'flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-xs transition-colors cursor-pointer text-start',
+                  'flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-xs transition-colors cursor-pointer text-start mb-0.5',
                   isSelected
-                    ? 'bg-emerald-950/60 text-emerald-300 font-semibold'
-                    : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
+                    ? 'bg-emerald-950/70 text-emerald-300 font-semibold border border-emerald-800/60'
+                    : 'text-slate-200 hover:bg-slate-800/80 hover:text-white'
                 )}
               >
                 <div className="flex flex-col">
                   <span className="font-medium text-sm leading-tight">{info.name}</span>
-                  <span className="text-[10px] text-slate-500">{info.englishName}</span>
+                  <span className="text-[10px] text-slate-400">{info.englishName}</span>
                 </div>
                 {isSelected && <Check className="h-4 w-4 text-emerald-400 shrink-0" />}
+              </button>
+            );
+          })}
+
+          <div className="px-2.5 py-1 mt-2 text-[10px] font-semibold uppercase tracking-wider text-slate-500 border-b border-white/5 mb-1 flex items-center justify-between">
+            <span>Upcoming Scripts</span>
+            <span className="text-[9px] text-amber-500/80 font-mono">Coming Soon</span>
+          </div>
+          {SUPPORTED_LOCALES.filter((code) => LOCALES_INFO[code].status === 'coming_soon').map((code) => {
+            const info = LOCALES_INFO[code];
+            const isSelected = locale === code;
+            return (
+              <button
+                key={code}
+                role="menuitem"
+                onClick={() => {
+                  setLocale(code);
+                  setIsOpen(false);
+                }}
+                className={cn(
+                  'flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-xs transition-colors cursor-pointer text-start opacity-75 hover:opacity-100',
+                  isSelected
+                    ? 'bg-slate-800 text-slate-200 font-semibold'
+                    : 'text-slate-400 hover:bg-slate-800/60 hover:text-slate-200'
+                )}
+              >
+                <div className="flex flex-col">
+                  <span className="font-medium text-xs leading-tight">{info.name}</span>
+                  <span className="text-[10px] text-slate-500">{info.englishName}</span>
+                </div>
+                <span className="text-[9px] font-mono uppercase bg-slate-900 border border-slate-700/60 text-slate-400 px-1.5 py-0.5 rounded">
+                  Preview
+                </span>
               </button>
             );
           })}

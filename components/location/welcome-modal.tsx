@@ -94,8 +94,15 @@ export function WelcomeModal() {
                         : 'bg-slate-900/60 border-slate-800 text-slate-300 hover:bg-slate-800 hover:border-slate-700'
                     )}
                   >
-                    <div>
-                      <div className="text-sm font-semibold">{info.name}</div>
+                    <div className="min-w-0 pr-1">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-sm font-semibold truncate">{info.name}</span>
+                        {info.status === 'active' && (
+                          <span className="text-[9px] font-mono uppercase bg-emerald-950/80 text-emerald-400 border border-emerald-800/60 px-1 py-0.2 rounded">
+                            Active
+                          </span>
+                        )}
+                      </div>
                       <div className="text-[10px] text-slate-400">{info.englishName}</div>
                     </div>
                     {isSelected && <Check className="h-4 w-4 text-emerald-400 shrink-0" />}

@@ -119,5 +119,21 @@
     "step1": "படி 1: உங்கள் மொழியைத் தேர்வுசெய்யவும்",
     "step2": "படி 2: உங்கள் இருப்பிடத்தை அமைக்கவும்",
     "getStarted": "ஏரோசென்ஸ் ஏஐ-க்குள் நுழையவும்"
+  },
+  "landing": {
+    "headline": "Breathe Smarter. Live Healthier.",
+    "subtitle": "Real-time atmospheric intelligence, deterministic CPCB air quality indices, 48-hour inversion forecasting, and auditable household impact quantification.",
+    "exploreLive": "Explore Live Air",
+    "discoverApp": "Discover AeroSense AI",
+    "digitalTwin": "Next-Gen Environmental Digital Twin",
+    "fivePillarsTitle": "Five Pillars of Clean-Air Defense",
+    "fivePillarsSubtitle": "A comprehensive end-to-end framework helping families navigate urban smog with physics-based clarity."
+  },
+  "diagnostics": {
+    "title": "Environmental Data Source Diagnostics",
+    "subtitle": "Transparent verification of real-time feeds, deterministic calculation engines, and sensor telemetry.",
+    "syncFeeds": "Sync Feeds",
+    "activeEngine": "Deterministic Engine Active",
+    "zeroHallucination": "Zero Hallucination Guarantee"
   }
 }
