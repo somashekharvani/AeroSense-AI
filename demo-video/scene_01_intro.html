@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AeroSense AI — Introduction</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1920px;
+      height: 1080px;
+      background: radial-gradient(circle at 50% 30%, #0d1e2e 0%, #040911 70%, #020508 100%);
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .grid {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: linear-gradient(to right, rgba(6,182,212,0.05) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(6,182,212,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: 1;
+    }
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 1300px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 10px 24px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid #10b981;
+      border-radius: 9999px;
+      color: #34d399;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .logo-img {
+      width: 780px;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 0 25px rgba(6,182,212,0.4));
+    }
+    h1 {
+      font-size: 64px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #ffffff 40%, #a5f3fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+    p.tagline {
+      font-size: 32px;
+      font-weight: 600;
+      color: #38bdf8;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+    }
+    .pillars-strip {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .pillar-pill {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid #334155;
+      padding: 16px 28px;
+      border-radius: 14px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #e2e8f0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .pillar-pill span { color: #10b981; margin-right: 8px; }
+    .author-foot {
+      position: absolute;
+      bottom: 40px;
+      font-size: 20px;
+      color: #64748b;
+      letter-spacing: 1px;
+      z-index: 10;
+    }
+    .author-foot strong { color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="content">
+    <div class="badge">PromptWars Challenge 6 • Official Product Demonstration</div>
+    <br>
+    <img src="../public/images/logo.svg" class="logo-img" alt="AeroSense AI Logo">
+    <h1>Clean-Air Decision Engine</h1>
+    <p class="tagline">Know the air. Predict the risk. Protect your family. Prove the impact.</p>
+    <div class="pillars-strip">
+      <div class="pillar-pill"><span>01</span> Know: Live CPCB AQI</div>
+      <div class="pillar-pill"><span>02</span> Predict: Inversion Physics</div>
+      <div class="pillar-pill"><span>03</span> Protect: Family Dose</div>
+      <div class="pillar-pill"><span>04</span> Home: Mass-Balance ODE</div>
+      <div class="pillar-pill"><span>05</span> Act: What-If Simulator</div>
+    </div>
+  </div>
+  <div class="author-foot">
+    Engineered &amp; Designed by <strong>Somashekhar Vani</strong> • Lead Engineer
+  </div>
+</body>
+</html>

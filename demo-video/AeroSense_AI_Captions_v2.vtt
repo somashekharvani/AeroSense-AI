@@ -1,0 +1,254 @@
+WEBVTT - AeroSense AI Demonstration Subtitles (v2)
+
+1
+00:00:00.000 --> 00:00:05.799
+Air pollution is one of the most critical public health emergencies of our time.
+
+2
+00:00:06.000 --> 00:00:13.800
+Across South Asia and the Indo-Gangetic Plain, hundreds of millions wake up under thick winter smog.
+
+3
+00:00:14.000 --> 00:00:24.800
+Yet a single colored AQI number doesn't tell a mother when to open windows, or an asthmatic grandfather his inhaled particulate mass.
+
+4
+00:00:25.000 --> 00:00:34.799
+Welcome to AeroSense AI — the Clean-Air Decision Engine, built for PromptWars Challenge 6.
+
+5
+00:00:35.000 --> 00:00:43.189
+Our mission: Know the air. Predict the risk. Protect your family. Prove the impact.
+
+6
+00:00:43.390 --> 00:00:52.189
+To see how AeroSense AI works in practice, let's follow an illustrative family scenario — the Sharma family in Bengaluru.
+
+7
+00:00:52.390 --> 00:01:03.189
+The parents commute along Outer Ring Road, 8-year-old Aarav has soccer practice, and Grandfather plans his daily walk.
+
+8
+00:01:03.390 --> 00:01:14.189
+Is outdoor air safe for soccer? Which pollutant is peaking? Is pollution trapping closer to the ground?
+
+9
+00:01:14.390 --> 00:01:27.250
+Traditional apps only give a number. AeroSense AI guides their decisions from sunrise to bedtime.
+
+10
+00:01:27.450 --> 00:01:35.250
+Here is AeroSense AI, live on the web at aero-sense-ai-psi.vercel.app.
+
+11
+00:01:35.450 --> 00:01:44.250
+Deep ink slate accented by emerald and teal, built for high contrast and accessibility.
+
+12
+00:01:44.450 --> 00:01:54.250
+Our deterministic physical engines do all the science. Generative AI only plans and explains.
+
+13
+00:01:54.450 --> 00:02:03.250
+Every metric comes from validated physics and official standards, with zero hallucinated numbers.
+
+14
+00:02:03.450 --> 00:02:12.660
+Live snapshot bar and introductions to our Five Pillars: Know, Predict, Protect, Home, and Act.
+
+15
+00:02:12.860 --> 00:02:17.660
+We are now inside the Overview Dashboard.
+
+16
+00:02:17.860 --> 00:02:27.660
+In Bengaluru, our engine calculates the Indian National AQI at 139, in the 'Moderate' category.
+
+17
+00:02:27.860 --> 00:02:37.660
+Ozone is the dominant pollutant at 127 µg/m³, while PM2.5 is measured at 24.2 µg/m³.
+
+18
+00:02:37.860 --> 00:02:49.660
+Under CPCB standards, this falls in the 'Good' sub-index band, though slightly above the WHO 24h guideline of 15 µg/m³.
+
+19
+00:02:49.860 --> 00:03:07.840
+3D Atmospheric Inversion Scene: 1,045m boundary layer, winds at 11.8 km/h, Inversion Risk score just 24/100.
+
+20
+00:03:08.040 --> 00:03:17.840
+Pillar 1: Live Air Intelligence. Inspect PM2.5, PM10, NO2, SO2, CO, and Ozone.
+
+21
+00:03:18.040 --> 00:03:27.840
+Every sub-index is computed strictly according to CPCB October 2014 breakpoint rules.
+
+22
+00:03:28.040 --> 00:03:38.840
+Switching from Bengaluru to Delhi-NCR in the location selector updates the entire dashboard.
+
+23
+00:03:39.040 --> 00:03:57.330
+In Delhi, AQI surges to 255 (Poor) dominated by PM2.5 at 106.9 µg/m³ — over 4x higher than Bengaluru.
+
+24
+00:03:57.530 --> 00:04:02.330
+Pillar 2: Pollution Forecast and Atmospheric Risk.
+
+25
+00:04:02.530 --> 00:04:12.330
+During cold winter evenings, ground cooling creates thermal inversions, trapping surface air.
+
+26
+00:04:12.530 --> 00:04:25.330
+AeroSense AI plots a forward 48-hour hourly outlook analyzing surface, 925 hPa, and 850 hPa lapse rates.
+
+27
+00:04:25.530 --> 00:04:44.630
+Backtest Calibration Panel transparently reports MAE, RMSE, and bias against historical station readings.
+
+28
+00:04:44.830 --> 00:04:55.630
+Pillar 3: Family Protection. All profiles stored strictly on-device in browser IndexedDB.
+
+29
+00:04:55.830 --> 00:05:06.630
+Personal identifiers stripped before any external call, passing only anonymized age groups to Gemini.
+
+30
+00:05:06.830 --> 00:05:18.630
+AeroSense AI applies the US EPA formula: Inhaled dose equals concentration times ventilation rate times duration.
+
+31
+00:05:18.830 --> 00:05:30.630
+Aarav's soccer dose is 13.3 µg, compared against a daily child reference budget of 120 µg based on WHO guidelines.
+
+32
+00:05:30.830 --> 00:05:42.250
+Grandfather's respiratory risk labeled with explicit Berkeley Earth non-clinical comparative disclaimers.
+
+33
+00:05:42.450 --> 00:05:51.250
+Pillar 4: Indoor Air Advisor, addressing the 90% of life spent indoors.
+
+34
+00:05:51.450 --> 00:06:01.250
+AeroSense AI uses a first-principles PM2.5 Mass-Balance Differential Equation.
+
+35
+00:06:01.450 --> 00:06:11.250
+In Bengaluru (PM2.5 24.2 µg/m³), the engine recommends 'Open Windows for Natural Ventilation'.
+
+36
+00:06:11.450 --> 00:06:20.250
+In Delhi (PM2.5 106.9 µg/m³), the equation reverses to 'Seal Windows and Run Purifier'.
+
+37
+00:06:20.450 --> 00:06:28.550
+Purifier CADR sizing calculator and blueprints for a DIY Corsi-Rosenthal Box.
+
+38
+00:06:28.750 --> 00:06:37.550
+Pillar 5: Act — The What-If Simulator. Proving the measurable impact of sustainable choices.
+
+39
+00:06:37.750 --> 00:06:49.550
+Priya's 15km commute shift from scooter to Namma Metro reduces in-cabin particulate penetration by 85%.
+
+40
+00:06:49.750 --> 00:07:00.550
+Avoids over 5 µg of inhaled particulate mass and 495 grams of vehicular CO2 tailpipe emissions per trip.
+
+41
+00:07:00.750 --> 00:07:13.450
+Clicking View Impact Receipt generates an auditable receipt with baseline, delta, and engine version impact@1.0.0.
+
+42
+00:07:13.650 --> 00:07:21.450
+AeroSense Drone Lab for low-altitude vertical atmospheric profiling.
+
+43
+00:07:21.650 --> 00:07:33.450
+Radical engineering honesty: status displays 'Not Connected' while prototype is in the workshop.
+
+44
+00:07:33.650 --> 00:07:42.450
+Clicking Launch Flight Demonstration illuminates an explicit amber 'SIMULATED' badge.
+
+45
+00:07:42.650 --> 00:07:54.490
+Telemetry HUD animates quadcopter ascent up to 120m, mapping vertical boundary layer traps.
+
+46
+00:07:54.690 --> 00:08:02.490
+Community Hub: Individual household actions scale to neighborhood impact.
+
+47
+00:08:02.690 --> 00:08:12.490
+Clean-Air Decision Score (0-100) measures verified household mitigation actions only.
+
+48
+00:08:12.690 --> 00:08:24.010
+Specialized Sectoral Action Plans for schools, eldercare homes, and construction sites.
+
+49
+00:08:24.210 --> 00:08:34.009
+AeroSense AI Copilot powered by Google Gemini 2.5 Flash with strict deterministic facts.
+
+50
+00:08:34.210 --> 00:08:44.009
+Input sanitized against prompt injection and demographic data stripped.
+
+51
+00:08:44.210 --> 00:08:57.009
+Asking for Bengaluru precautions, Gemini cites Fact #1: AQI 139 and Fact #3: PM2.5 24.2.
+
+52
+00:08:57.210 --> 00:09:09.009
+Recommends midday ventilation, metro transit, and identifies clean air window from noon to 3 PM.
+
+53
+00:09:09.210 --> 00:09:21.110
+Server-side validator audits every number against facts registry, rejecting unsupported claims.
+
+54
+00:09:21.310 --> 00:09:31.110
+Clean-Air Daily Planner synthesizes intelligence into a 24-hour visual routine for Sharma family.
+
+55
+00:09:31.310 --> 00:09:52.960
+7 AM ventilation, 8:30 AM metro transit, 1-4 PM outdoor window, and 7 PM evening seal advisory.
+
+56
+00:09:53.160 --> 00:10:02.960
+Spatial Air and Incident Map at /map. Concentric radar rings at 10, 25, and 50 kilometers.
+
+57
+00:10:03.160 --> 00:10:14.960
+Wind moving at 11.8 km/h towards 226° SW; downwind plume sector labeled as mathematical estimate.
+
+58
+00:10:15.160 --> 00:10:32.100
+Transparent engineering honesty: unconfigured or clear upstream feeds display verified targets without fake fires.
+
+59
+00:10:32.300 --> 00:10:40.100
+Under the hood: Decoupled 5-layer architecture powering AeroSense AI.
+
+60
+00:10:40.300 --> 00:10:53.100
+Layer 1: Ingestion. Layer 2: Fusion, privacy, prompt safety. Layer 3: Eight offline TypeScript engines.
+
+61
+00:10:53.300 --> 00:11:07.100
+Layer 4: Fact Registry and Impact Receipts. Layer 5: Next.js 15, Three.js 3D, and 11 Indian languages with Urdu RTL.
+
+62
+00:11:07.300 --> 00:11:18.100
+120 passing Vitest tests. Developed by Somashekhar Vani for PromptWars Challenge 6.
+
+63
+00:11:18.300 --> 00:11:31.210
+AeroSense AI: Know the air. Predict the risk. Protect your family. Prove the impact.
+

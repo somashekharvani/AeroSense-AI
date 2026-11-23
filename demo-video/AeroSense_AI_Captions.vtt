@@ -1,0 +1,258 @@
+WEBVTT - AeroSense AI Product Demonstration Subtitles
+
+1
+00:00:00.000 --> 00:00:05.799
+Air pollution is one of the most critical public health emergencies of our time.
+
+2
+00:00:06.000 --> 00:00:13.800
+Across South Asia and the Indo-Gangetic Plain, hundreds of millions wake up under thick winter smog.
+
+3
+00:00:14.000 --> 00:00:25.800
+Knowing the air is 'Unhealthy' doesn't tell a mother when to open windows, or an asthmatic grandfather his inhaled particulate mass.
+
+4
+00:00:26.000 --> 00:00:37.799
+Welcome to AeroSense AI — the Clean-Air Decision Engine, built for PromptWars Challenge 6.
+
+5
+00:00:38.000 --> 00:00:50.129
+Our mission: Know the air. Predict the risk. Protect your family. Prove the impact.
+
+6
+00:00:50.329 --> 00:00:59.129
+To see how AeroSense AI works in the real world, let's follow the Sharma family in Bengaluru.
+
+7
+00:00:59.329 --> 00:01:11.129
+The parents commute on Outer Ring Road, 8-year-old Aarav has soccer practice, and Grandfather plans his daily walk.
+
+8
+00:01:11.329 --> 00:01:21.129
+Is outdoor air safe for soccer? Is pollution trapping closer to the ground? Should they ventilate or seal?
+
+9
+00:01:21.329 --> 00:01:30.519
+Traditional apps just give a number. AeroSense AI guides their decisions from sunrise to bedtime.
+
+10
+00:01:30.719 --> 00:01:38.519
+Here is the AeroSense AI platform, live on the web at aero-sense-ai-psi.vercel.app.
+
+11
+00:01:38.719 --> 00:01:47.519
+Deep ink slate accented by emerald and cyan, designed for high contrast and accessibility.
+
+12
+00:01:47.719 --> 00:01:57.519
+Our deterministic engines do all the science. Generative AI only plans and explains.
+
+13
+00:01:57.719 --> 00:02:08.520
+Every metric is grounded in verified physics with zero hallucinated numbers. Let's launch the dashboard.
+
+14
+00:02:08.719 --> 00:02:13.520
+We are now inside the Overview Dashboard.
+
+15
+00:02:13.719 --> 00:02:24.520
+Right now in Bengaluru, our deterministic engine calculates an Indian National AQI of 139 (Moderate).
+
+16
+00:02:24.719 --> 00:02:36.520
+The dominant pollutant is Ozone (O3) at 127 µg/m³, while PM2.5 is clean at 24.2 µg/m³.
+
+17
+00:02:36.719 --> 00:02:48.520
+Our 3D atmospheric scene shows a convective boundary-layer height of 1,045 meters.
+
+18
+00:02:48.719 --> 00:03:00.520
+With winds at 11.8 km/h, the Inversion Risk Score is low — just 24 out of 100.
+
+19
+00:03:00.719 --> 00:03:13.259
+The Telemetry strip displays live Open-Meteo reanalysis, CPCB engines, and station status.
+
+20
+00:03:13.459 --> 00:03:24.259
+Pillar 1: Live Air Intelligence. Inspect PM2.5, PM10, NO2, SO2, CO, and Ozone.
+
+21
+00:03:24.459 --> 00:03:35.259
+Every sub-index is computed strictly according to CPCB October 2014 guidelines.
+
+22
+00:03:35.459 --> 00:03:46.259
+Switching from Bengaluru to Delhi-NCR in the selector updates the entire dashboard.
+
+23
+00:03:46.459 --> 00:04:04.769
+Delhi surges to AQI 255 (Poor) dominated by PM2.5 at 106.9 µg/m³ — over 4x higher than Bengaluru.
+
+24
+00:04:04.969 --> 00:04:10.769
+Pillar 2: Pollution Forecast and Atmospheric Risk.
+
+25
+00:04:10.969 --> 00:04:21.769
+During cold winter evenings, thermal inversions trap pollution near ground level.
+
+26
+00:04:21.969 --> 00:04:35.769
+Our lapse rate engine analyzes surface, 925 hPa, and 850 hPa temperatures to detect traps hours ahead.
+
+27
+00:04:35.969 --> 00:04:48.769
+Our Backtest Calibration Panel transparently reports MAE, RMSE, and bias against historical readings.
+
+28
+00:04:48.969 --> 00:04:59.879
+We never claim a model is 100% accurate; we show its actual physical uncertainty.
+
+29
+00:05:00.079 --> 00:05:13.879
+Pillar 3: Family Protection. All profiles, ages, and medical sensitivities are stored strictly on-device in IndexedDB.
+
+30
+00:05:14.079 --> 00:05:24.879
+Personal identifiers are stripped before any LLM call, passing only anonymized age groups.
+
+31
+00:05:25.079 --> 00:05:36.879
+AeroSense AI calculates inhaled dose: Concentration times minute ventilation rate times duration.
+
+32
+00:05:37.079 --> 00:05:48.879
+Aarav's soccer dose is 13.3 micrograms — only 6% of his WHO daily recommended limit of 225 micrograms.
+
+33
+00:05:49.079 --> 00:06:02.209
+Grandfather's respiratory risk in Bengaluru equals less than 0.1 cigarettes equivalent today.
+
+34
+00:06:02.409 --> 00:06:13.209
+Pillar 4: Indoor Air Advisor. Most people spend 90% of their lives indoors.
+
+35
+00:06:13.409 --> 00:06:25.209
+Our first-principles PM2.5 Mass-Balance model evaluates infiltration, settling, and filtration.
+
+36
+00:06:25.409 --> 00:06:37.209
+In Bengaluru (PM2.5 24.2 µg/m³), the engine recommends 'Open Windows for Natural Ventilation'.
+
+37
+00:06:37.409 --> 00:06:49.209
+In Delhi (PM2.5 106.9 µg/m³), the equation reverses: 'Seal Windows and Run Purifier'.
+
+38
+00:06:49.409 --> 00:07:02.289
+Includes CADR purifier sizing and DIY open-source Corsi-Rosenthal Box blueprints.
+
+39
+00:07:02.489 --> 00:07:12.289
+Pillar 5: Act — The What-If Simulator. Proving the measurable impact of sustainable choices.
+
+40
+00:07:12.489 --> 00:07:25.289
+Shifting Priya's 15 km commute from a petrol scooter to Namma Metro drops emissions by 97.5%.
+
+41
+00:07:25.489 --> 00:07:34.289
+Clicking View Impact Receipt generates an auditable scientific receipt.
+
+42
+00:07:34.489 --> 00:07:48.309
+Shows baseline, delta with units, emission factors, confidence, and engine version impact@1.0.0.
+
+43
+00:07:48.509 --> 00:07:58.309
+AeroSense Drone Lab — Custom hardware for vertical atmospheric profiling.
+
+44
+00:07:58.509 --> 00:08:10.309
+Radical honesty: connection status shows 'Not Connected' while the prototype is in the workshop.
+
+45
+00:08:10.509 --> 00:08:21.309
+Clicking Launch Flight Demonstration illuminates an explicit 'SIMULATED' badge.
+
+46
+00:08:21.509 --> 00:08:36.159
+The telemetry HUD animates quadcopter ascent up to 120m, mapping vertical boundary layer traps.
+
+47
+00:08:36.359 --> 00:08:44.159
+Community Hub: Individual actions scale to neighborhood impact.
+
+48
+00:08:44.359 --> 00:08:56.159
+Clean-Air Decision Score (0-100) measures verified household mitigation actions, never biological health.
+
+49
+00:08:56.359 --> 00:09:07.769
+Provides Sectoral Action Plans for schools, eldercare homes, and construction sites.
+
+50
+00:09:07.969 --> 00:09:16.769
+AeroSense AI Copilot powered by Google Gemini 2.5 Flash.
+
+51
+00:09:16.969 --> 00:09:28.769
+Prompts are sanitized, PII is stripped, and Gemini receives verified deterministic facts.
+
+52
+00:09:28.969 --> 00:09:42.769
+When asked about outdoor soccer, Gemini cites Fact #1: AQI 139 and Fact #3: PM2.5 24.2 µg/m³.
+
+53
+00:09:42.969 --> 00:10:02.949
+Server-side validation audits all numbers in the LLM response, rejecting unsupported claims.
+
+54
+00:10:03.149 --> 00:10:13.949
+Clean-Air Daily Planner synthesizes all intelligence into a personalized 24-hour routine.
+
+55
+00:10:14.149 --> 00:10:30.659
+Schedules 7 AM ventilation, 8:30 AM metro commute, 1-4 PM outdoor window, and 7 PM evening seal.
+
+56
+00:10:30.859 --> 00:10:42.659
+Spatial Air and Incident Map at /map. Concentric radar rings at 10, 25, and 50 kilometers.
+
+57
+00:10:42.859 --> 00:10:54.659
+Wind indicator shows 11.8 km/h from Northeast towards 226° Southwest with 35° downwind plume sector.
+
+58
+00:10:54.859 --> 00:11:10.109
+Satellite fire points are labeled thermal indicators; downwind zones are explicitly mathematical estimates.
+
+59
+00:11:10.309 --> 00:11:20.109
+Under the hood: 5-layer decoupled architecture powering AeroSense AI.
+
+60
+00:11:20.309 --> 00:11:32.109
+Layer 1: Multi-source ingestion. Layer 2: Fusion, privacy, and safety gateway.
+
+61
+00:11:32.309 --> 00:11:45.109
+Layer 3: Eight deterministic engines running 100% offline with zero LLM dependencies.
+
+62
+00:11:45.309 --> 00:12:00.109
+Layer 4: Fact Registry and Impact Receipts. Layer 5: Next.js 15, Three.js 3D, and 11 Indian languages.
+
+63
+00:12:00.309 --> 00:12:13.109
+120 passing Vitest tests. Developed by Somashekhar Vani for PromptWars Challenge 6.
+
+64
+00:12:13.309 --> 00:12:27.449
+AeroSense AI: Know the air. Predict the risk. Protect your family. Prove the impact.
+

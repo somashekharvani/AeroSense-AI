@@ -38,3 +38,17 @@ coverage/
 .DS_Store
 Thumbs.db
 *.pem
+
+# Demo video intermediate build artifacts
+demo-video/raw/
+demo-video/raw-test/
+demo-video/processed/
+demo-video/audio/*.wav
+demo-video/test-speech.wav
+demo-video/raw-v2/
+demo-video/processed-v2/
+demo-video/audio-v2/*.mp3
+demo-video/test-prabhat*.mp3
+demo-video/voice_sample_prabhat.mp3
+demo-video/forecast-test.png
+demo-video/*.mp4
