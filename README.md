@@ -7,6 +7,16 @@
 </p>
 
 <p align="center">
+  <a href="https://aero-sense-ai-psi.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Platform-aero--sense--ai--psi.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Platform on Vercel" />
+  </a>
+</p>
+
+<p align="center">
+  🌐 <strong>Live Application URL:</strong> <a href="https://aero-sense-ai-psi.vercel.app/"><strong>https://aero-sense-ai-psi.vercel.app</strong></a>
+</p>
+
+<p align="center">
   <a href="#system-architecture"><img src="https://img.shields.io/badge/Architecture-5--Layer%20Deterministic-06b6d4?style=flat-square" alt="Architecture" /></a>
   <a href="#deterministic-scientific-engines"><img src="https://img.shields.io/badge/Scientific%20Engines-Pure%20TypeScript%20(No%20LLM)-10b981?style=flat-square" alt="Engines" /></a>
   <a href="#multilingual-support-11-languages"><img src="https://img.shields.io/badge/Languages-11%20Indian%20Scripts%20%2B%20RTL-3b82f6?style=flat-square" alt="Languages" /></a>
