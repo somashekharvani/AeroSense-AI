@@ -60,6 +60,7 @@ export function LanguageProvider({
         changeLanguage(urlLang);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const changeLanguage = async (newLocale: Locale) => {
